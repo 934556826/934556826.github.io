@@ -1,0 +1,758 @@
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    height: 80px;
+    /* position: sticky; */
+}
+
+.header .nav {
+    width: 1100px;
+    margin: 0 auto;
+    height: 80px;
+    /* background: gray; */
+    /* position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -550px; */
+}
+
+.content {
+    width: 100%;
+    position: relative;
+    height: 679px;
+    overflow: hidden;
+}
+
+.content .menu {
+    position: fixed;
+    right: 0;
+    width: 32px;
+    /* height: 120px;
+    background: skyblue; */
+    top: 50%;
+    margin-top: -70px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.content .list {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home {
+    width: 100%;
+    height: 679px;
+    /* background: rgb(45, 206, 24); */
+    background: url('./images/bg1.jpg') no-repeat;
+    background-position: center;
+    background-size: 1540px 680px;
+}
+
+.course {
+    width: 100%;
+    height: 679px;
+    /* background: rgb(24, 73, 206); */
+    background: url('./images/bg3.jpg') no-repeat;
+    background-position: center;
+    background-size: 1540px 680px;
+    overflow: hidden;
+}
+
+.works {
+    width: 100%;
+    height: 679px;
+    /* background: rgb(206, 24, 39); */
+    background: url('./images/bg4.jpg') no-repeat;
+    background-position: center;
+    background-size: 1540px 680px;
+}
+
+.about {
+    width: 100%;
+    height: 679px;
+    /* background: rgb(24, 139, 206); */
+    background: url('./images/bg5.jpg') no-repeat;
+    background-position: center;
+    background-size: 1540px 680px;
+}
+
+.team {
+    width: 100%;
+    height: 679px;
+    /* background: rgb(124, 24, 206); */
+    background: url('./images/bg2.jpg') no-repeat;
+    background-position: center;
+    background-size: 1540px 680px;
+}
+
+.menu li {
+    width: 12px;
+    height: 12px;
+    margin: 8px;
+    border: 1px solid white;
+    float: left;
+    transition: all .3s;
+    border-radius: 50%;
+}
+
+.menu .active {
+    background: white;
+}
+
+.header .nav .left {
+    float: left;
+    background: url(./images/logo.png);
+    width: 188px;
+    height: 31px;
+    margin-top: 35px;
+}
+
+.header .nav .right {
+    float: right;
+    margin-top: 45px;
+    height: 31px;
+    position: relative;
+}
+
+.nav .right ul li {
+    float: left;
+    /* border: 1px solid skyblue; */
+    width: 55px;
+    height: 23px;
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+    color: skyblue;
+    transition: all .5s;
+}
+
+.nav .right ul li:nth-child(1) {
+    /* background: url(./images/home_gruen.png) no-repeat;
+    background-position: center; */
+    /* background-color: skyblue; */
+    text-align: center;
+}
+
+.arrow {
+    width: 21px;
+    height: 11px;
+    background: url(./images/menuIndicator.png) no-repeat;
+    position: absolute;
+    transition: left .5s;
+    bottom: -15px;
+    left: 17.5px;
+    z-index: 22;
+    transition: all .5s;
+}
+
+.right ul .active {
+    background-image: linear-gradient(to right, #9B63FF, #462188);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.liShow {
+    width: 1100px;
+    height: 520px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* overflow: hidden; */
+}
+
+.list li {
+    position: relative;
+}
+
+.swiper-container {
+    height: 520px;
+}
+
+.swiper-slide {
+    background-size: 1100px 520px;
+    transition: all .8s;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+.swiper-slide h1 {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
+    color: white;
+}
+
+.course .liShow .left {
+    float: left;
+    width: 45%;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+    /* height: 100%; */
+    /* overflow: hidden; */
+    z-index: 33;
+}
+
+.course .liShow .left .active {
+    top: -132px;
+    right: -30px;
+}
+
+.course .liShow .left .active1 {
+    left: -180px;
+}
+
+.course .liShow .left .active2 {
+    bottom: -70px;
+    right: -110px;
+}
+
+.plane1 {
+    position: absolute;
+    top: -360px;
+    right: 150px;
+    height: 280px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.plane2 {
+    position: absolute;
+    transition: all 1s;
+    bottom: 0;
+    left: -500px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.plane3 {
+    position: absolute;
+    transition: all 1s;
+    bottom: 100px;
+    right: -200px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.course .liShow .left h1 {
+    color: cadetblue;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
+}
+
+.course .liShow .left p {
+    color: #009EE0;
+    line-height: 1.5;
+    font-size: 15px;
+    margin-top: 100px;
+}
+
+.course .liShow .right {
+    float: right;
+    width: 480px;
+    margin-top: 80px;
+}
+
+.logogo {
+    float: left;
+    width: 120px;
+    height: 132px;
+    cursor: pointer;
+    transition: all 1s;
+    position: relative;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 132px;
+    background: rgba(0, 0, 0, 0.5);
+    transform: rotateY(-90deg);
+    transition: all 1s;
+    color: white;
+}
+
+.l1 {
+    background: url(./images/ps4.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l2 {
+    background: url(./images/xbox.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l3 {
+    background: url(./images/microsoft.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l4 {
+    background: url(./images/tencent.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l5 {
+    background: url(./images/sony.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l6 {
+    background: url(./images/ubisoft.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l7 {
+    background: url(./images/blizzard.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l8 {
+    background: url(./images/steam.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l9 {
+    background: url(./images/capcom.png) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    background-position: center;
+}
+
+.l10 {
+    background: url(./images/shanda.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l11 {
+    background: url(./images/nintendo.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.l12 {
+    background: url(./images/ea.png) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.liShow .right .logogo .active {
+    transform: rotateY(90deg);
+}
+
+.liShow .right .logogo .active1 {
+    transform: rotateY(0deg);
+}
+
+.works .liShow {
+    padding: 20px;
+}
+.works{
+    overflow: hidden;
+}
+.works .liShow h1 {
+    color: cadetblue;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
+}
+
+.works .liShow ul {
+    /* overflow: hidden; */
+    width: 100%;
+    position: absolute;
+    
+}
+.works .liShow .active11{
+    right: 450px;
+    top: 70px;
+}
+.works .liShow .img .active33{
+    
+    top: -200px;
+}
+.pencel1{
+    position: absolute;
+    top: -170px;
+    right: 450px;
+    height: 90px;
+    overflow: hidden;
+    transition: all 1s;
+}
+.pencel3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    overflow: hidden;
+    z-index:1;
+    transition: all 1s;
+}
+.works .liShow ul li {
+    width: 220px;
+    height: 133px;
+    float: left;
+    box-sizing: border-box;
+    /* padding: 15px; */
+    border: 1px solid skyblue;
+    overflow: hidden;
+    position: relative;
+}
+
+.auto-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.works .liShow ul li:last-child {
+    width: 332px;
+    /* background: url(./images/worksimg4.jpg); */
+}
+
+
+/* .works .liShow ul li:nth-child(1) {
+    background: url(./images/worksimg1.jpg);
+}
+
+.works .liShow ul li:nth-child(2) {
+    background: url(./images/worksimg2.jpg);
+}
+
+.works .liShow ul li:nth-child(3) {
+    background: url(./images/worksimg3.jpg);
+} */
+
+.works ul li .active {
+    transform: scale(1.3) rotate(15deg);
+}
+
+.works .img li img {
+    max-width: none;
+    transition: all .8s;
+}
+
+.search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: none;
+    transition: all 1s;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.sear {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+    background: url(./images/zoomico.png) no-repeat;
+    /* background-position-y: -36px; */
+    transition: all .8s;
+}
+
+.img {
+    margin-top: 150px;
+    position: relative;
+}
+
+.sear {
+    cursor: pointer;
+}
+
+.sear:hover {
+    background-position-y: -36px;
+}
+
+.robotMove {
+    position: absolute;
+    top: -130px;
+    right: 290px;
+    transition: right 3s;
+    z-index: 999;
+}
+
+.img li {
+    margin-left: 5px;
+}
+
+.works .liShow ul li:nth-child(4) {
+    width: 334px;
+    z-index: 22;
+}
+
+.img .active {
+    right: 520px;
+}
+.about .liShow .left{
+    float:left;
+    
+}
+.about .liShow .left{
+    float:left;
+    width: 45%;
+}
+.about .liShow .left h1{
+    margin: 50px 0 100px 50px ;
+}
+.about .liShow .left h1 span{
+    display: block;
+    color: cadetblue;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px
+}
+.about .liShow .left  p{
+    color: #009EE0;
+    line-height: 1.5;
+    font-size: 15px;
+    margin-left: 50px;
+}
+.about .liShow .right{
+    float:right;
+    width: 45%;
+    
+}
+.right .top{
+    width: 270px;
+    height: 210px;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    position: relative;
+    margin: 50px 0 60px 150px;
+    transform: rotate(30deg);
+    transition: all 1s;
+}
+.right .top>img{
+     transform: scale(1.5);
+    transition: all .5s;
+}
+
+.right .top ul{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.right .top ul li{
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.right .top ul li>img{
+    position: absolute;
+    max-width: none;
+    transition: all .5s;
+    width: 260px;
+    height: 200px;
+    display: block;
+}
+.right .top ul li:nth-child(2)>img{
+    left: -130px;
+}
+.right .top ul li:nth-child(3)>img{
+    top: -100px;
+}
+.right .top ul li:nth-child(4)>img{
+    top: -100px;
+    left: -130px;
+}
+/* 1111111 */
+.right .bott{
+    width: 270px;
+    height: 210px;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    position: relative;
+    transform: rotate(-30deg);
+    transition: all 1s;
+}
+.right .active{
+    transform: rotate(0deg);
+}
+.right .bott>img{
+     transform: scale(1.5);
+    transition: all .5s;
+}
+
+.right .bott ul{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.right .bott ul li{
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.right .bott ul li>img{
+    position: absolute;
+    max-width: none;
+    transition: all .5s;
+    width: 260px;
+    height: 200px;
+    display: block;
+}
+.right .bott ul li:nth-child(2)>img{
+    left: -130px;
+}
+.right .bott ul li:nth-child(3)>img{
+    top: -100px;
+}
+.right .bott ul li:nth-child(4)>img{
+    top: -100px;
+    left: -130px;
+}
+
+
+.team .header-title{
+    padding: 25px;
+    overflow: hidden;
+}
+.team .header-title .left{
+    float: left;
+    width: 56%;
+}
+.team .header-title .right{
+    float: left;
+    width: 40%;
+}
+
+.team .header-title .left span{
+    display: block;
+    color: cadetblue;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
+}
+.team .header-title .right p{
+    color: #009EE0;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.cosplay {
+   padding: 0 55px;
+   height: 448px;
+   width: 100%;
+}
+.cosplay  li{
+    float: left;
+    width: 118px;
+    height: 100%;
+    background: url(./images/team.png) no-repeat;
+    cursor: pointer;
+}
+.cosplay .active{
+    opacity: .7;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .boxA {
+        position: relative;
+        width: 220px;
+        height: 220px;
+
+
+        border-radius: 50%;
+        margin: 50px auto;
+    }
+
+    .tao {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        border-top: 10px solid red;
+        border-left: 10px solid red;
+        border-right: 10px solid green;
+        border-bottom: 10px solid green;
+        transition: all 0.8s ease-in-out;
+        box-sizing: border-box;
+    }
+
+    .img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 210px;
+        height: 210px;
+
+    }
+
+    .infor {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 210px;
+        height: 210px;
+        z-index: 2;
+        text-align: center;
+        z-index: 2;
+        border-radius: 50%;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.8s ease-in-out;
+    }
+
+    .infor1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 220px;
+        text-align: center;
+        z-index: 2;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #1a4a72;
+        z-index: -1;
+    }
+
+    .infor::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: .6;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .infor h3 {
+        color: #fff;
+        text-transform: uppercase;
+        position: relative;
+        letter-spacing: 2px;
+        font-size: 22px;
+        margin: 0 30px;
+        padding: 55px 0 0 0;
+        /* height: 110px; */
+        text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3)
+    }
+
+    .infor p {
+        color: #bbb;
+        padding: 10px 5px;
+        font-size: initial;
+        margin: 0 30px;
+        font-size: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5)
+    }
+
+    .infor1 h3 {
+        color: #fff;
+        text-transform: uppercase;
+        position: relative;
+        letter-spacing: 2px;
+        font-size: 22px;
+        margin: 0 30px;
+        padding: 55px 0 0 0;
+        /* height: 110px; */
+        text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3)
+    }
+
+    .infor1 p {
+        color: #bbb;
+        padding: 10px 5px;
+        font-size: initial;
+        margin: 0 30px;
+        font-size: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5)
+    }
+
+    .auto-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 50%;
+    }
+
+    .boxA:hover .tao {
+        transform: rotate(180deg);
+    }
+
+    .boxA:hover .infor {
+        opacity: 1;
+    }
+
+    .boxB {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        position: relative;
+        margin: 100px auto;
+    }
+
+    .tao1 {
+        width: 220px;
+        height: 220px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 20px solid rgba(255, 255, 255, .6);
+        border-radius: 50%;
+        box-sizing: border-box;
+        transition: all 0.6s ease-in-out;
+        transform-origin: top center;
+    }
+
+    .imgB {
+        transition: all 0.6s ease-in-out;
+        transform-origin: top center;
+    }
+
+    .boxB:hover .imgB {
+
+        transform: rotateX(180deg);
+    }
+
+    .boxB:hover .tao1 {
+
+        transform: rotateX(180deg);
+
+    }
+
+    .auto-img1 {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .boxC {
+        width: 320px;
+        height: 220px;
+        margin: 150px auto;
+        box-sizing: border-box;
+        background: gray;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .imgC {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 300px;
+        height: 200px;
+        transition: all 0.6s ease-in-out;
+        transform-origin: 50% 50%;
+    }
+
+    .boxC:hover .imgC {
+        transform: rotate(720deg) scale(0);
+    }
+    .boxC:hover .infor2 {
+        height: 200px;
+    }
+    .boxC:hover .infor2 h3 {
+        top: 0;
+    }
+    .boxC:hover .infor2 p {
+        top: 0;
+    }
+
+    .infor2 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 300px;
+        height: 0;
+        text-align: center;
+        background: #1a4a72;
+        transition: all 0.6s ease-in-out;
+        transition-delay: 0.6s;
+    }
+
+    .infor2 h3 {
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        font-size: 17px;
+        padding: 10px;
+       background: rgba(0, 0, 0, 0.3);
+        margin: 30px 0 0 0;
+        position: relative;
+        top: -110px;
+        transition: all 0.6s ease-in-out;
+        transition-delay: 0.8s;
+    }
+
+    .infor2 p {
+        color: #bbb;
+        padding: 10px 5px;
+        font-size: initial;
+        margin: 0 30px;
+        font-size: 12px;
+        position: relative;
+        top: -110px;
+        transition: all 0.6s ease-in-out;
+        transition-delay: 0.8s;
+    }
+</style>
+
+<body>
+    <div class="boxA">
+        <div class="tao">
+
+        </div>
+        <div class="img ">
+            <img class="auto-img" src="http://gudh.github.io/ihover/dist/images/assets/2.jpg" alt="">
+        </div>
+        <div class="infor">
+            <h3>Heading here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
+
+
+    <div class="boxB">
+        <div class="imgB">
+            <img class="auto-img" src="http://gudh.github.io/ihover/dist/images/assets/3.jpg" alt="">
+        </div>
+        <div class="tao1"></div>
+        <div class="infor1">
+            <h3>Heading here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
+
+    <div class="boxC">
+        <div class="imgC">
+            <img class="auto-img1" src="http://gudh.github.io/ihover/dist/images/assets/rect/1.jpg" alt="auto-img1">
+        </div>
+
+        <div class="infor2">
+            <h3>Heading here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loading</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .loading{
+            margin: 100px;
+            width: 200px;
+            height: 220px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gear{
+            position: absolute;
+            margin: 100px;
+            animation: myrotate 8s linear 0s infinite;
+        }
+        .top{
+            width: 100px;
+            height: 100px;
+            top:0;
+            left: 0;
+        }
+        .top .piece{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: lightcoral;
+            border-radius: 10px;
+        }
+        .top .piece:nth-child(1){
+            transform: rotate(0deg);
+        }
+        .top .piece:nth-child(1){
+            transform: rotate(30deg);
+        }
+        .top .piece:nth-child(2){
+            transform: rotate(60deg);
+        }
+        .top .hole{
+            background: #fff;
+            transform: scale(0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .left{
+            width: 80px;
+            height: 80px;
+            top:122px;
+            left: -38px;
+            animation: myrotates 10s linear 0s infinite;
+        }
+        .left .piece{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #97ddff;
+            border-radius: 10px;
+        }
+        .left .piece:nth-child(1){
+            transform: rotate(0deg);
+        }
+        .left .piece:nth-child(1){
+            transform: rotate(30deg);
+        }
+        .left .piece:nth-child(2){
+            transform: rotate(60deg);
+        }
+        .left .hole{
+            background: #fff;
+            transform: scale(0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+         .left{
+            width: 80px;
+            height: 80px;
+        }
+        .left .piece{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #97ddff;
+            border-radius: 8px;
+        }
+        .left .piece:nth-child(1){
+            transform: rotate(0deg);
+        }
+        .left .piece:nth-child(1){
+            transform: rotate(30deg);
+        }
+        .left .piece:nth-child(2){
+            transform: rotate(60deg);
+        }
+        .left .hole{
+            background: #fff;
+            transform: scale(0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .botto{
+            width: 60px;
+            height: 60px;
+            top:115px;
+            left: 75px;
+            
+        }
+        .botto .piece{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffcd66;
+            border-radius: 6px;
+        }
+        .botto .piece:nth-child(1){
+            transform: rotate(0deg);
+        }
+        .botto .piece:nth-child(1){
+            transform: rotate(30deg);
+        }
+        .botto .piece:nth-child(2){
+            transform: rotate(60deg);
+        }
+        .botto .hole{
+            background: #fff;
+            transform: scale(0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .mask{
+            position: absolute;
+            top: 55px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scale(0.5);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.4) , 0 0 10px 0 rgba(0, 0, 0, 0.15) inset;
+        }
+        @keyframes myrotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes myrotates {
+            from{
+                transform: rotate(360deg);
+            }
+            to{
+                transform: rotate(0deg);
+            }
+        }
+        h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="gear top">
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="piece"></div>
+            <div class="hole"></div>
+        </div>
+        <div class="gear left">
+                <div class="piece"></div>
+                <div class="piece"></div>
+                <div class="piece"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="gear botto">
+                    <div class="piece"></div>
+                    <div class="piece"></div>
+                    <div class="piece"></div>
+                    <div class="hole"></div>
+                </div>
+                <div class="mask"></div>
+                <h4>Loading</h4>
+    </div>
+</body>
+</html>
