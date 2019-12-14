@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>VR视界</title>
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <!-- 导航条 -->
+  <header class="head-nav">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="" href="#"><img class="auto-img" src="./image/logo2.png" alt=""></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <!-- 等等要用的 -->
+            <!-- <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form> -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">HOME</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">PAGES <span class="glyphicon glyphicon-remove"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><a href="#">ABOUT US</a></li>
+                  <li><a href="#">TEAM</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">ERROR</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">GAMES <span class="glyphicon glyphicon-remove"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><a href="#">ALL GAMES</a></li>
+                  <li><a href="#">GAME DETAILS</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">GALLERY <span class="glyphicon glyphicon-remove"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><a href="#">PROJECT 3 COLUMN</a></li>
+                  <li><a href="#">PROJECT 4 COLUMN</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">BLOG <span class="glyphicon glyphicon-remove"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><a href="#">BLOG GRID</a></li>
+                  <li><a href="#">BLOG SIDEBAR</a></li>
+                  <li><a href="#">BLOG DETAILS</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#">CONTACTS</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- 轮播图1 -->
+  <section class="lunbo">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <!-- <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              
+            </ol> -->
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+
+          <img class="auto-img" src="./image/b1.jpg" alt="...">
+          <div class="carousel-caption">
+            <h1>We are ready your next challenge</h1>
+            <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional
+              development services.</p>
+            <button class="btn btn-default" type="submit">KNOW MORE</button>
+          </div>
+        </div>
+        <div class="item">
+          <img class="auto-img" src="./image/b2.jpg" alt="...">
+          <div class="carousel-caption">
+            <h1>Cavalier create your virtual worlds </h1>
+            <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional
+              development services.</p>
+            <button class="btn btn-default" type="submit">KNOW MORE</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  </section>
+  <!-- 第二部分内容 -->
+  <section class="swiper01">
+    <div class="container">
+      <!-- Swiper -->
+      <div class="swiper-container non swiper-container-initialized swiper-container-horizontal">
+        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1044px, 0px, 0px);">
+          <div class="swiper-slide  swiper-slide-duplicate" data-swiper-slide-index="7"
+            style="width: 492px; margin-right: 30px;">Slide 8</div>
+          <div class="swiper-slide  swiper-slide-duplicate" data-swiper-slide-index="8"
+            style="width: 492px; margin-right: 30px;">Slide 9</div>
+          <div class="swiper-slide  swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="9"
+            style="width: 492px; margin-right: 30px;">Slide 10</div>
+
+          <div class="swiper-slide  swiper-slide-active" data-swiper-slide-index="0"
+            style="width: 492px; margin-right: 30px;"><img class="auto-img" src="./image/3.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide  swiper-slide-next" data-swiper-slide-index="1"
+            style="width: 492px; margin-right: 30px;">
+            <img class="auto-img" src="./image/4.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide " data-swiper-slide-index="2" style="width: 492px; margin-right: 30px;"><img
+              class="auto-img" src="./image/5.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide " data-swiper-slide-index="3" style="width: 492px; margin-right: 30px;"><img
+              class="auto-img" src="./image/6.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide " data-swiper-slide-index="4" style="width: 492px; margin-right: 30px;"><img
+              class="auto-img" src="./image/1.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide " data-swiper-slide-index="5" style="width: 492px; margin-right: 30px;"><img
+              class="auto-img" src="./image/2.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0"
+            style="width: 492px; margin-right: 30px;">Slide 1</div>
+          <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1"
+            style="width: 492px; margin-right: 30px;">Slide 2</div>
+          <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"
+            style="width: 492px; margin-right: 30px;">Slide 3</div>
+        </div>
+
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button1"></div>
+        <div class="swiper-button-prev swiper-button1"></div>
+      </div>
+
+      <!-- 超小屏幕时应用的轮播图  <= 768px-->
+      <div class="swiper-container small">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img class="auto-img" src="./image/3.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide"><img class="auto-img" src="./image/4.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide"><img class="auto-img" src="./image/5.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide"><img class="auto-img" src="./image/6.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide"><img class="auto-img" src="./image/1.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide"><img class="auto-img" src="./image/2.jpg" alt="">
+            <div class="showed">
+              <div class="read">
+                <img src="./image/g1.png" alt="">
+                <h4>Ripple Royal</h4>
+                <p>Comming soon Feb 4, 2019</p>
+                <a href="#">Learn more ></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+  </section>
+
+  <!-- 第三部分内容 -->
+  <section class="shows01">
+    <div class="container">
+      <header>
+        <h3>Our Games</h3>
+        <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional development
+          services.</p>
+        <div class="logo">
+          <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/about/line.png" alt="">
+        </div>
+      </header>
+
+      <div class="context">
+        <!-- 111111111 -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ihover" style="order: 1;">
+          <div class="switch">PC</div>
+          <img class="auto-img" src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/product/p1.jpg"
+            alt="">
+          <div class="playto">
+
+            <i class="fa fa-play" style="font-size: 50px;"></i>
+
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flex" style="order: 2;">
+
+          <div class="contents">
+            <h4><a href="">Temple Fight</a></h4>
+            <p>Launch: June 2016</p>
+            <p>Price: Free</p>
+            <p> Rating: 4.5</p>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+
+          <!-- 按钮 -->
+          <div class="play-butt">
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/gplay.png" alt="">
+            </span>
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/aplay.png" alt="">
+            </span>
+          </div>
+        </div>
+        <!-- 222222222 -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flex" style="order: 4;">
+
+          <div class="contents">
+            <h4><a href="">Dangers War</a></h4>
+            <p>Launch: June 2016</p>
+            <p>Price: Free</p>
+            <p> Rating: 4.5</p>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+
+          <!-- 按钮 -->
+          <div class="play-butt">
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/gplay.png" alt="">
+            </span>
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/aplay.png" alt="">
+            </span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ihover" style="order: 3;">
+          <div class="switch">PS4</div>
+          <img class="auto-img" src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/product/p2.jpg"
+            alt="">
+          <div class="playto">
+
+            <i class="fa fa-play" style="font-size: 50px;"></i>
+
+          </div>
+        </div>
+        <!-- 333333333 -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ihover" style="order: 5;">
+          <div class="switch">MOBILE</div>
+          <img class="auto-img" src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/product/p3.jpg"
+            alt="">
+          <div class="playto">
+
+            <i class="fa fa-play" style="font-size: 50px;"></i>
+
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flex" style="order: 6;">
+
+          <div class="contents">
+            <h4><a href="">Angels Fight</a></h4>
+            <p>Launch: June 2016</p>
+            <p>Price: Free</p>
+            <p> Rating: 4.5</p>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+
+          <!-- 按钮 -->
+          <div class="play-butt">
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/gplay.png" alt="">
+            </span>
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/aplay.png" alt="">
+            </span>
+          </div>
+        </div>
+        <!-- 444444444444 -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flex" style="order: 8;">
+
+          <div class="contents">
+            <h4><a href="">Dragons War</a></h4>
+            <p>Launch: June 2016</p>
+            <p>Price: Free</p>
+            <p> Rating: 4.5</p>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o" style="color: #EC9123;"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+
+          <!-- 按钮 -->
+          <div class="play-butt">
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/gplay.png" alt="">
+            </span>
+            <span>
+              <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/icon/aplay.png" alt="">
+            </span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ihover" style="order: 7;">
+          <div class="switch">PC</div>
+          <img class="auto-img" src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/product/p4.jpg"
+            alt="">
+          <div class="playto">
+
+            <i class="fa fa-play" style="font-size: 50px;"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 第四部分内容 -->
+  <section class="shows02">
+    <div class="container">
+      <header>
+        <h3>Our Games</h3>
+        <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional development
+          services.</p>
+        <div class="logo">
+          <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/about/line.png" alt="">
+        </div>
+      </header>
+
+      <ul class="oderto">
+        <li class="active">all</li>
+        <li>screen</li>
+        <li>stream</li>
+        <li>player</li>
+        <li>challenge</li>
+      </ul>
+
+
+
+    </div>
+    <!-- 图片展示栏 -->
+    <div class="imgshow">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p1.jpg" alt="">
+        <div class="datas" data-src='./image/p1.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p2.jpg" alt="">
+        <div class="datas" data-src='./image/p2.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p3.jpg" alt="">
+        <div class="datas" data-src='./image/p3.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p4.jpg" alt="">
+        <div class="datas" data-src='./image/p4.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p5.jpg" alt="">
+        <div class="datas" data-src='./image/p5.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p6.jpg" alt="">
+        <div class="datas" data-src='./image/p6.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p7.jpg" alt="">
+        <div class="datas" data-src='./image/p7.jpg' href=""></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><img class="auto-img" src="./image/p8.jpg" alt="">
+        <div class="datas" data-src='./image/p8.jpg' href=""></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 第五部分内容 -->
+  <section class="show-five">
+    <div class="container">
+      <header>
+        <h3>Players Reviews</h3>
+        <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional development
+          services.</p>
+        <div class="logo">
+          <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/about/line.png" alt="">
+        </div>
+      </header>
+
+      <!-- 轮播图 -->
+      <!-- Swiper -->
+      <div class="swiper-container five-four five-3 swiper-container-initialized swiper-container-horizontal">
+        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1566px, 0px, 0px);">
+          <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="3"
+            style="width: 1536px; margin-right: 30px;">Slide 10</div>
+          <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
+            style="width: 1536px; margin-right: 30px;">
+            <!-- 展示栏 -->
+            <div class="five-shows">
+              <div class="person-head">
+
+                <img class="auto-img" src="./image/h1.jpg" alt="">
+
+              </div>
+              <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+                replacing a selection.</p>
+              <h4>Manila meri</h4>
+              <span>Clients - <a href="#">Genarel customer</a></span>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
+            style="width: 1536px; margin-right: 30px;">
+            <!-- 展示栏 -->
+            <div class="five-shows">
+              <div class="person-head">
+
+                <img class="auto-img" src="./image/h2.jpg" alt="">
+
+              </div>
+              <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+                replacing a selection.</p>
+              <h4>Selena gomaz</h4>
+              <span>Clients - <a href="#">Genarel customer</a></span>
+            </div>
+          </div>
+          <div class="swiper-slide" data-swiper-slide-index="2" style="width: 1536px; margin-right: 30px;">
+            <!-- 展示栏 -->
+            <div class="five-shows">
+              <div class="person-head">
+
+                <img class="auto-img" src="./image/h3.jpg" alt="">
+
+              </div>
+              <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+                replacing a selection.</p>
+              <h4>Robert karlus</h4>
+              <span>Clients - <a href="#">Genarel customer</a></span>
+            </div>
+          </div>
+          <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1536px; margin-right: 30px;">
+            <!-- 展示栏 -->
+            <div class="five-shows">
+              <div class="person-head">
+
+                <img class="auto-img" src="./image/h4.jpg" alt="">
+
+              </div>
+              <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+                replacing a selection.</p>
+              <h4>Arnold russel</h4>
+              <span>Clients - <a href="#">Genarel customer</a></span>
+            </div>
+          </div>
+
+          <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0"
+            style="width: 1536px; margin-right: 30px;">Slide 1</div>
+        </div>
+
+        <!-- Add Arrows -->
+        <div class=" swiper-button1 swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+        <div class="swiper-button1 swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+      </div>
+    </div>
+
+    <!-- 两个的 -->
+    <div class="swiper-container five-four five-2 swiper-container-initialized swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1566px, 0px, 0px);">
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="3"
+          style="width: 1536px; margin-right: 30px;">Slide 10</div>
+        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
+          style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h1.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Manila meri</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
+          style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h2.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Selena gomaz</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="2" style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h3.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Robert karlus</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h4.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Arnold russel</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0"
+          style="width: 1536px; margin-right: 30px;">Slide 1</div>
+      </div>
+
+      <!-- Add Arrows -->
+      <div class=" swiper-button1 swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+      <div class="swiper-button1 swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+    </div>
+
+    <!-- 一个的 -->
+    <div class="swiper-container five-four five-1 swiper-container-initialized swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1566px, 0px, 0px);">
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="3"
+          style="width: 1536px; margin-right: 30px;">Slide 10</div>
+        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
+          style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h1.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Manila meri</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
+          style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h2.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Selena gomaz</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="2" style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h3.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Robert karlus</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+        <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1536px; margin-right: 30px;">
+          <!-- 展示栏 -->
+          <div class="five-shows">
+            <div class="person-head">
+
+              <img class="auto-img" src="./image/h4.jpg" alt="">
+
+            </div>
+            <p>Replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When
+              replacing a selection.</p>
+            <h4>Arnold russel</h4>
+            <span>Clients - <a href="#">Genarel customer</a></span>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0"
+          style="width: 1536px; margin-right: 30px;">Slide 1</div>
+      </div>
+
+      <!-- Add Arrows -->
+      <div class=" swiper-button1 swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+      <div class="swiper-button1 swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- 第六部分内容 -->
+  <section class="show-six">
+    <div class="container">
+      <header>
+        <h3>Competition</h3>
+        <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional development
+          services.</p>
+        <div class="logo">
+          <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/about/line.png" alt="">
+        </div>
+      </header>
+
+      <!-- //展示栏内容 -->
+      <div class="six-show">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <ul>
+            <li class="active">
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/A1.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Challanger fight competition</h4>
+                  <span>September 05, 2018</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/A2.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Angels fight competition</h4>
+                  <span>November 12, 2018</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/A3.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Temple Fight Challanger</h4>
+                  <span>November 12, 2018</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/A4.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Dangers War fight man</h4>
+                  <span>September 20, 2018</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 右边的图片 -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="right-img">
+            <img class="auto-img" src="./image/A1.jpg" alt="">
+            <div class="img-play">
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第七部分内容 -->
+  <section class="show-seven">
+    <div class="container">
+      <header>
+        <h3>Games News</h3>
+        <p>Cavalier Studios has been creating innovative games since 2003. We offer our clients professional development
+          services.</p>
+        <div class="logo">
+          <img src="https://www.17sucai.com/preview/1474877/2018-12-20/Cavalier/img/about/line.png" alt="">
+        </div>
+      </header>
+
+      <div class="show-7">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+          <ul>
+            <li>
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/b1.jpg" alt="...">
+                  </a>
+                  <div class="after"></div>
+                </div>
+                <div class="media-body">
+                  <span> 15 july, 2017&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment-o"
+                      aria-hidden="true"></i>10</span>
+
+
+                  <h4 class="media-heading"><a>Cavalier Studios has been creating innovative games since 2003</a></h4>
+                  <p>Cavalier is an engineering and general contracting group that has gained.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/b2.jpg" alt="...">
+                  </a>
+                  <div class="after"></div>
+                </div>
+                <div class="media-body">
+                  <span> 15 july, 2017&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment-o"
+                      aria-hidden="true"></i>10</span>
+
+
+                  <h4 class="media-heading"><a>We offer our clients professional development services.</a></h4>
+                  <p>Cavalier is an engineering and general contracting group that has gained.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="left">
+                  <a href="#">
+                    <img class="auto-img" src="./image/b3.jpg" alt="...">
+                  </a>
+                  <div class="after"></div>
+                </div>
+                <div class="media-body">
+                  <span> 15 july, 2017&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment-o"
+                      aria-hidden="true"></i>10</span>
+
+
+                  <h4 class="media-heading"><a>Cavalier Studios has been creating innovative games since 2003</a></h4>
+                  <p>Cavalier is an engineering and general contracting group that has gained.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="img-4">
+            <img class="auto-img" src="./image/b4.jpg" alt="">
+            <div class="after"></div>
+          </div>
+
+          <div class="media-body">
+            <span> 20 june, 2018
+              &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment-o" aria-hidden="true"></i>23</span>
+
+
+            <h4 class="media-heading"><a>We offer our clients professional development.</a></h4>
+            <p>Cavalier is an engineering and general contracting group that has gained its expertise over the past
+              twenty- six years.Konstract is an engineering and general contracting.Cavalier is an engineering and
+              general contracting group that has gained its expertise over the past twenty- six years.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第八部分内容 -->
+  <section class="show-eight">
+    <div class="container">
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <h4>INFORMATION</h4>
+        <p><span>Tel : </span>+1907-543478944</p>
+        <p><span>Email : </span>info@cavalier43.com</p>
+        <p><span>Location : </span>House-30/2, New york</p>
+        <ul class="last">
+          <li><i class="fa fa-facebook"></i></li>
+          <li><i class="fa fa-twitter"></i></li>
+          <li><i class="fa fa-google"></i></li>
+          <li><i class="fa fa-pinterest"></i></li>
+          <li><i class="fa fa-instagram"></i></li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <h4>COMPETITION GAMES</h4>
+        <ul>
+          <li><a href=""><i class="fa fa-long-arrow-right" aria-hidden="true">&nbsp;&nbsp;</i>Draogons war</a></li>
+          <li><a href=""><i class="fa fa-long-arrow-right" aria-hidden="true">&nbsp;&nbsp;</i>Stranger Anime</a></li>
+          <li><a href=""><i class="fa fa-long-arrow-right" aria-hidden="true">&nbsp;&nbsp;</i>Skyfall challange</a></li>
+          <li><a href=""><i class="fa fa-long-arrow-right" aria-hidden="true">&nbsp;&nbsp;</i>Ripple fight</a></li>
+          <li><a href=""><i class="fa fa-long-arrow-right" aria-hidden="true">&nbsp;&nbsp;</i>Alverter david</a></li>
+          <li><a href=""><i class="fa fa-long-arrow-right" aria-hidden="true">&nbsp;&nbsp;</i>Daneres fight</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <h4>SUBSCRIBE</h4>
+        <p>
+          Are you looking for professional games services for your new games.Are you looking for professional developer
+          for your new games.
+        </p>
+        <input type="text" class="form-control" placeholder="Text input">
+        <button type="button" class="btn btn-primary btn-lg">Subscribe</button>
+      </div>
+    </div>
+  </section>
+  <!-- 图片册 -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <img class="img-responsive" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <span><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+          <span><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="./index.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
+  <script src="./product.js"></script>
+  <script>
+    var swiper = new Swiper('.non', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: true,
+      // centeredSlides: true,
+      loop: true,
+
+    });
+
+    var swiper1 = new Swiper('.small', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: true,
+
+    });
+
+    var swiper2 = new Swiper('.five-four', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    var swiper3 = new Swiper('.five-2', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      loop: true,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    var swiper4 = new Swiper('.five-1', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+
+    // $(window).resize(function () {
+    //   let width = $(this).width();
+    //   var widths;
+    //   widths = width + 16;
+
+    //   if (widths < 768){
+
+    // }else if(widths < 992 && widths >= 768){
+
+    // }else{
+
+    // }
+    // console.log(swiper2.passedParams.slidesPerView);
+
+    // })
+  </script>
+</body>
+
+</html>

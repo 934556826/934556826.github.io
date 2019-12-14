@@ -1,0 +1,137 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  padding: 0;
+  margin: 0;
+}
+.nav > li {
+  overflow: hidden;
+  position: relative;
+  list-style-type: none;
+  color: #fff;
+  padding: 15px 23px;
+  font-size: 13px;
+  border-bottom: 1px solid #DA4453;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.nav > li:nth-child(1) {
+  background: #DA4453;
+}
+.nav > li:hover {
+  background: #DA4453;
+}
+.nav > li .ghost {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+}
+i {
+  padding-right: 10px;
+}
+.ghost {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+}
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 46.8px;
+  background: #ED5565;
+  transition: all 0.3s;
+}
+.kuo {
+  background: #383838;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+  height: 0px;
+}
+.kuo > li {
+  overflow: hidden;
+  position: relative;
+  list-style-type: none;
+  color: #fff;
+  padding: 15px 23px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+.kuo > li:hover {
+  border-left: solid 6px #DA4453;
+}
+.active2 {
+  height: 187.2px;
+}
+.fa-times {
+  padding-right: 0;
+  width: 15px;
+  height: 15px;
+  float: right;
+  display: block;
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.act {
+  transform: rotate(0deg);
+}
+@keyframes xxx {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(25);
+    opacity: 0;
+  }
+}
+footer {
+  line-height: 50px;
+  font-weight: 600;
+  color: #f0f0f0;
+  padding-left: 22px;
+}
+.main {
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8);
+  background: #ED5565;
+  width: 260px;
+}
+.main .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.main .search > input {
+  background: none;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 0 15px;
+  font-size: 18px;
+  color: white;
+  width: 70%;
+  font-weight: bold;
+  height: 30px;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <div class="search"><input type="text"></div>
+        <ul class="nav">
+            <li><i class="fa fa-home"></i>
+                Home
+                <div class="ghost"></div>
+            </li>
+            <li><i class="fa fa-glass"></i>Events
+                    <div class="ghost"></div>
+            </li>
+            <li><i class="fa fa-file-image-o"></i>Gallery
+                    <div class="ghost"></div>
+            </li>
+            <li class="ser"><i class="fa fa-cog"></i>Services
+                    <div class="ghost"></div>
+                    <i class="fa fa-times"></i>
+            </li>
+            <ul class="kuo k1">
+                    <li>Web Design<div class="ghost"></div></li>
+                    <li>Hosting<div class="ghost"></div></li>
+                    <li>Design<div class="ghost"></div></li>
+                    <li>Consulting<div class="ghost"></div></li>
+                    
+                </ul>
+            <li><i class="fa fa-home"></i>系统管理
+                    <div class="ghost"></div>
+            </li>
+            <li class="por"><i class="fa fa-suitcase"></i>Portfolio
+                    <div class="ghost"></div>
+                    <i class="fa fa-times"></i>
+                </li>
+                <ul class="kuo k2">
+                        <li>Web Design<div class="ghost"></div></li>
+                        <li>Graphics<div class="ghost"></div></li>
+                        <li>Photoshop<div class="ghost"></div></li>
+                        <li>Programming<div class="ghost"></div></li>
+                        
+                    </ul>
+            <li><i class="fa fa-user"></i>About 
+                    <div class="ghost"></div>
+            </li>
+            <li><i class="fa fa-envelope"></i>Contact 
+                    <div class="ghost"></div>
+            </li>
+            <footer>Footer</footer>
+        </ul>
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        
+        var li = document.querySelectorAll('.nav>li');
+        
+        var home = li[0];
+
+        li.forEach(function(lis,index){
+            lis.onmousemove = function (e) {
+            var ghost = this.querySelector('.ghost');
+            
+            
+            var x = (e.pageX || e.clientX) - this.offsetLeft;
+            var y = (e.pageY || e.clientY) - this.offsetTop;
+            
+
+            ghost.style.top = y - ghost.offsetHeight / 2 + 'px';
+            ghost.style.left = x - ghost.offsetWidth / 2 + 'px';
+        }
+        lis.onclick = function () {
+            if(lis.className == 'ser'){
+                $(lis.querySelector('.fa-times')).toggleClass('act');
+                // if($(this).siblings('.k2'))
+                
+                $('.k2').removeClass('active2');
+                $('.por .fa-times').removeClass('act')
+                
+                // console.log($(this).siblings('.active2'));
+                $('.k1').toggleClass('active2');
+                
+                
+                
+            }
+            if(lis.className == 'por'){
+                $(lis.querySelector('.fa-times')).toggleClass('act');
+                
+                $('.k1').removeClass('active2');
+                $('.ser .fa-times').removeClass('act')
+
+                $('.k2').toggleClass('active2');
+            }
+            var self = this.querySelector('.ghost');
+            self.style.animation = 'xxx 0.8s ease';
+            // console.log(this.querySelector('.ghost'));
+            
+            // ghost.style.transform = 'scale(20)';
+            // ghost.style.opacity = '0';
+            setTimeout(function () {
+                self.style.animation = '';
+            }, 400)
+        }
+
+        })
+        var lii = document.querySelectorAll('.kuo>li');
+        lii.forEach(function(lis,index){
+            lis.onmousemove = function (e) {
+                
+                
+            var ghos = this.querySelector('.ghost');
+            
+            
+            var x = (e.pageX || e.clientX) - this.offsetLeft;
+            var y = (e.pageY || e.clientY) - this.offsetTop;
+            // console.log(x,y);
+            
+
+            ghos.style.top = y - ghos.offsetHeight / 2 + 'px';
+            ghos.style.left = x - ghos.offsetWidth / 2 + 'px';
+        }
+        lis.onclick = function () {
+            console.log(1);
+            
+            var self1 = this.querySelector('.ghost');
+            self1.style.animation = 'xxx 0.8s ease';
+            
+            setTimeout(function () {
+                self1.style.animation = '';
+            }, 700)
+        }
+
+        })
+
+        $('.k1>li').each(function(index,lis){
+            $(lis).on('mouseenter',function(){
+                $('.k1 .mask').css({
+                    top:$($('.mask')[0]).height() * index + 'px',
+                })
+            })
+        })
+        $('.k2>li').each(function(index,lis){
+            $(lis).on('mouseenter',function(){
+                $(lis).parent().children('.mask').css({
+                    top:$($('.mask')[0]).height() * index + 'px',
+                })
+            })
+        })
+        var li1 = $('.nav>li')
+        li1.each(function(index,lis){
+            console.log(lis);
+            
+        })
+        
+        // ghost.addEventListener('animationend',function(){
+        //     ghost.style.animation = '';
+        // })
+//         $("span.msg-data").each(function() {
+//     $(this)[0].addEventListener("animationend",function(){
+//         $(this).css("animation","");
+//     });
+// });
+    </script>
+    
+</body>
+
+</html>
