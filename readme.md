@@ -7,7 +7,7 @@
 [VR游戏](https://934556826.github.io/响应式项目二/index.html)
 # CSS3动画
 [3D盒子](https://934556826.github.io/C3动画/3D盒子.html)
-[ihover](https://934556826.github.io/C3动画/今日份作业.html) push
+[ihover](https://934556826.github.io/C3动画/今日份作业.html)
 [ihover2](https://934556826.github.io/C3动画/ihover盒子.html)
 [幽灵盒子](https://934556826.github.io/C3动画/3D盒子.html)
 [loading1](https://934556826.github.io/C3动画/loading1.html)
