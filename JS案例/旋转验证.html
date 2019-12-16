@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+        margin: 0 auto;
+        width: 410px;
+        /* overflow: hidden; */
+        background: lightblue;
+        padding-top: 20px;
+    }
+
+    .main .auimg {
+        margin: 0 auto;
+        width: 220px;
+        height: 220px;
+        background: lightgreen;
+        border-radius: 50%;
+        background-image: url(./1.jpg);
+        background-repeat: no-repeat;
+        background-position-x: -120px;
+        background-size: cover;
+
+    }
+
+
+    .main .runn {
+        margin-top: 30px;
+        width: 100%;
+        background: rgb(196, 185, 185);
+        height: 50px;
+        position: relative;
+    }
+
+    .main .runn .running {
+        height: 26px;
+        width: 50px;
+        background: lime;
+        border-radius: 20px;
+        position: absolute;
+        top: 50%;
+        margin-top: -13px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <!-- 图片旋转 -->
+        <div class="auimg"></div>
+
+        <!-- 滚动条 -->
+        <div class="runn">
+            <div class="running"></div>
+
+            <!-- 绑定事件层 -->
+            <div class="layer"></div>
+        </div>
+
+    </div>
+    <script>
+        window.onload = function () {
+
+
+            var auimg = document.getElementsByClassName('auimg')[0];
+            var layer = document.getElementsByClassName('layer')[0];
+            var layerStyle = getComputedStyle(layer);
+            // console.log('auimg ==> ', auimg);
+
+            var running = document.getElementsByClassName('running')[0];
+            var runningStyle = getComputedStyle(running);
+
+            var rundeg = getComputedStyle(auimg).transform;
+
+
+
+
+            var random = parseInt(Math.random() * 360);
+
+            auimg.style.transform = "rotate(" + random + "deg)";
+            // console.log(random);
+
+
+            // huitiao();
+
+            // var s3 = huitiao();
+
+
+            function move(e) {
+                var left = e.offsetX - parseFloat(runningStyle.width) / 2;
+
+                var minLeft = 0;
+                var maxLeft = parseFloat(layerStyle.width) - parseFloat(runningStyle.width);
+
+                left = left >= maxLeft ? maxLeft : left <= minLeft ? minLeft : left;
+
+                running.style.left = left + "px";
+
+            }
+
+            // var array = [];
+            layer.onmousedown = function (e) {
+
+                move(e);
+
+
+
+                //触发onmousemove事件
+                this.onmousemove = function (e) {
+
+                    //阻止浏览器默认行为
+                    e.preventDefault();
+
+                    move(e);
+                    // var deg = parseInt(running.style.left)
+
+                    var deg = parseInt(running.style.left);
+
+                    // console.log(deg);
+                    // console.log(random);
+                    console.log(deg + random);
+
+                    // var s3 = huitiao();
+                    // console.log("s3 ==> ", s3);
+                    // console.log("deg ==> ", deg)
+                    // console.log("qqq == >", s3 + deg);
+
+                    auimg.style.transform = "rotate(" + (random + deg) + "deg)";
+
+
+                }
+                // array.push((random + deg));
+                // console.log('array ==>',array);
+
+            }
+
+            layer.onmouseup = function () {
+                this.onmousemove = null;
+                running.style.left = 0 + "px";
+                // console.log("rundeg ==> ", typeof auimg.style.transform);
+                var s = auimg.style.transform;
+                var num = s.replace(/[^0-9]/ig, "");
+                console.log(num);
+                if (num >= 350 && num <= 360) {
+                    alert('通过验证')
+                } else {
+                    // var s3 = huitiao();
+                    auimg.style.transform = "rotate(" + random + "deg)";
+                }
+                console.log("???");
+            }
+
+
+            layer.onmouseleave = function () {
+                this.onmousemove = null;
+
+            }
+        }
+        // var s1 = _.random(0.5, 0.9);
+        // console.log('s1 ==> ',_.random(0, 5));
+
+
+        
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+
+</body>
+
+</html>

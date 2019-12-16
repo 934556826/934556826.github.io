@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: lightseagreen;
+        }
+
+        .stage {
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .stage b {
+            font-weight: normal;
+            font-family: "宋体";
+        }
+
+        .stage b.success {
+            color: lightgray;
+        }
+
+        .stage b.error {
+            color: red;
+        }
+
+        .stage .inputed input {
+            width: 100%;
+            /* border: none;
+                outline: none; */
+            float: left;
+        }
+
+        .time::after {
+            content: "秒";
+        }
+
+        .speed::after {
+            content: "/每分钟";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="original"></div>
+
+        <div class="inputed">
+            <span class="renewed"></span>
+            <input type="text" id="text" />
+        </div>
+    </div>
+    <div class="score">
+        <span class="time">0</span>
+        <span class="speed">0</span>
+    </div>
+    
+</body>
+<script>
+    var timeDom = document.querySelector(".score .time");
+    var speedDom = document.querySelector(".score .speed");
+    var stage = document.querySelector('.stage');
+    var original = stage.querySelector('.original');
+    var renewed = stage.querySelector(".renewed");
+    var text = stage.querySelector("#text");
+
+    var str = "而我和直子间的关系也渐渐地有了进步。我们彼此越来越能适应对方。";
+
+    function init() {
+        str.split('').forEach(function (letter, index, stringArray) {
+            var node = document.createElement('b');
+            node.innerText = letter;
+            original.appendChild(node);
+        })
+    }
+    init();
+    text.focus();
+
+    var condition = true;
+    text.oninput = function () {
+        var userInput = this.value;
+        // console.log(userInput);
+
+        var isIncludeLetter = userInput.split("").some(function (letter, index, stringArray) {
+            return "abcdefghijklmnopqrstuvwxyz".indexOf(letter) !== -1;
+        });
+        if (isIncludeLetter) {
+            return;
+        }
+        //排除英文字母 拼音
+
+        if (condition) {
+            //防抖 短时间触发了两次
+            userInput.split('').forEach(function (letter, index, stringArray) {
+                var node = document.createElement('b');
+                node.innerText = letter;
+                //创建新节点
+                renewed.appendChild(node);
+
+                //每次 appendChild 肯定是追加到最后一个
+                var lastIndex = renewed.querySelectorAll('b').length - 1;
+                if (original.querySelectorAll('b').item(lastIndex).innerText === letter) {
+                    original
+                        .querySelectorAll('b').item(lastIndex).classList.add('success');
+                    renewed
+                        .querySelectorAll('b').item(lastIndex).classList.add('success');
+                    successNum++;
+                } else {
+                    original
+                        .querySelectorAll('b').item(lastIndex).classList.add('error');
+                    renewed
+                        .querySelectorAll('b').item(lastIndex).classList.add('error');
+
+                }
+            });
+            condition = false;
+        }
+        setTimeout(function () {
+            condition = true;
+        }, 10);
+
+        this.value = '';
+    };
+
+    var startTimestamp;
+    var gameStart = false;
+    var successNum = 0;
+    document.body.onkeydown = function (event) {
+        //判断 删除键
+        if (event.code === 'Backspace' && renewed.hasChildNodes() && !text.value) {
+            var lastIndex = renewed.querySelectorAll("b").length - 1;
+            renewed.removeChild(renewed.lastElementChild);
+            original.querySelectorAll("b").item(lastIndex).className = "";
+        }
+
+        if (!gameStart) {
+            //任意键开始
+            startTimestamp = new Date().getTime();
+            setInterval(function () {
+                var currentTimestamp = new Date().getTime();
+                var s1 = parseInt((currentTimestamp - startTimestamp) / 1000);
+                timeDom.innerText = s1;
+                speedDom.innerText = parseInt(successNum / (s1 / 60));
+            }, 1000);
+            gameStart = true;
+        }
+    }
+</script>
+
+</html>

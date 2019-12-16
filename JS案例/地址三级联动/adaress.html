@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>三级联动地址</title>
+	</head>
+	<style>
+		.box{
+			width: 628px;
+			height: 340px;
+			margin: 100px auto;
+		}
+		
+		.add{
+			width: 280px;
+			height: 300px;
+			border: 2px solid #E4393C;
+			margin: 20px 0 0 20px;
+			float: left;
+		}
+		
+		.sele{
+			width: 250px;
+			height: 30px;
+			margin: 10px 15px;
+		}
+		
+		.address{
+			width: 244px;
+			height: 60px;
+			margin: 10px 15px;
+		}
+		
+		.submit{
+			width: 100px;
+			height: 30px;
+			border: none;
+			outline: none;
+			background-color: #E4393C;
+			margin: 10px auto;	
+			display: block;
+			border-radius: 10px;
+			color: white;		
+		}
+		
+		.alert{
+			width: 280px;
+			height: 300px;
+			margin: 20px 20px 0 0;
+			float: right;
+			border: 2px solid #E4393C;
+			display: none;
+		}
+		
+		.alert>div{
+			width: 230px;
+			height: 80px;
+			border: 1px solid #E4393C;
+			margin: 10px auto;
+			text-align: center;
+			padding: 10px;
+		}
+	</style>
+
+	<body>
+
+		<div class="box">
+			<div class="add">
+
+				<select class="sele" id="provinces">
+					<option value="default">省份</option>
+				</select>
+
+				<select class="sele" id="city">
+					<option value="cities">城市</option>
+				</select>
+
+				<select class="sele" id="area">
+					<option value="areas">区/县</option>
+				</select>
+
+				<textarea class="address" value=" " placeholder="请输入详细地址"></textarea>
+
+				<button class="submit" id="submit">提交</button>
+			</div>
+			<div class="alert">
+				<div>您输入的地址是: <span id="alert"></span></div>
+				
+			</div>
+
+		</div>
+		<script src="data.js"></script>
+		<script src="W.js"></script>
+
+		<script>
+			window.onload = function() {
+				W.init();
+			}
+		</script>
+
+	</body>
+
+</html>

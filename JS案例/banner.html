@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./banner.css">
+</head>
+
+<body>
+
+  <div class="banner">
+    <div class="img-box">
+      <div>
+        <img class="auto-img" src="./images/a.jpg" alt="" />
+      </div>
+      <div class="hide">
+        <img class="auto-img" src="./images/b.jpg" alt="" />
+      </div>
+      <div class="hide">
+        <img class="auto-img" src="./images/c.jpg" alt="" />
+      </div>
+      <div class="hide">
+        <img class="auto-img" src="./images/d.jpg" alt="" />
+      </div>
+
+    </div>
+    <div class="arrows">
+      <span class="arrow prev" name="prev">上</span>
+      <span class="arrow next" name="next">下</span>
+    </div>
+    <ul class="list">
+      <li class="active" data-num="0"></li>
+      <li data-num="1"></li>
+      <li data-num="2"></li>
+      <li data-num="3"></li>
+    </ul>
+  </div>
+
+  <script src="./banner.js"></script>
+  <script>
+    
+    window.onload = function () {
+
+      banner.init();
+
+    }
+
+  </script>
+</body>
+
+</html>

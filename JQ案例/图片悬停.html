@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>泡泡悬停效果</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" />
+</head>
+<style>
+    .main {
+        width: 180px;
+        height: 90px;
+        margin: 50px auto;
+        background: #F8B627;
+        /* cursor: progress; */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main .pop {
+        width: 36px;
+        height: 36px;
+        background: #42B44E;
+        opacity: .7;
+        border-radius: 50%;
+        z-index: 1;
+        position: absolute;
+        visibility: hidden;
+        transition: transform .5s;
+
+    }
+
+    .main .layer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    /* .main .active{
+        
+    } */
+</style>
+
+<body>
+    <div class="main ">
+        <div class="layer"></div>
+        <div class="pop"></div>
+    </div>
+
+    <div class="main ">
+        <div class="layer"></div>
+        <div class="pop"></div>
+    </div>
+
+
+    <div class="main">
+        <div class="layer"></div>
+        <div class="pop"></div>
+    </div>
+
+
+    <div class="main">
+        <div class="layer"></div>
+        <div class="pop"></div>
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        var main = $('.main');
+        var layer = $('.layer')
+        var pop = $('.pop');
+
+        main.each(function (index, mains) {
+            
+            
+            $(mains).children('.layer').on('mousemove', function (e) {
+                var x = e.offsetX;
+                var y = e.offsetY;
+
+                var minLeft = -parseInt(pop.eq(0).width()) / 2;
+                var maxLeft = parseInt(layer.eq(0).width());
+
+                var minTop = -parseInt(pop.eq(0).height()) / 2;
+                var maxTop = parseInt(layer.eq(0).height());
+                //控制鼠标中心在泡泡中心
+                var left = x - parseInt(pop.eq(0).width()) / 2;
+                var top = y - parseInt(pop.eq(0).height()) / 2;
+
+                left = left >= maxLeft ? maxLeft : left < minLeft ? minLeft : left;
+                top = top >= maxTop ? maxTop : top <= minTop ? minTop : top;
+
+               $(mains).children('.pop').css({ left: left + 'px',top: top + 'px' })
+            //    $(mains).children('.pop').css({ top: top + 'px' })
+            })
+
+            $(mains).children('.layer').on('mouseenter', function () {
+                // console.log(this);
+                
+                $(mains).children('.pop').css({
+                    visibility: 'visible',
+                    transform: 'scale(10)',
+                })
+
+            })
+
+
+            $(mains).children('.layer').on('mouseleave', function () {
+                $(mains).children('.pop').css({
+                    transform: ' scale(0)',
+                })
+            })
+
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

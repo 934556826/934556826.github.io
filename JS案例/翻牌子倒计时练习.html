@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul>li {
+            float: left;
+        }
+
+        .im {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            background-image: url('./num1.png');
+            background-position-x: center;
+            background-position-y: 0px;
+        }
+
+        .stage ul::after {
+            content: ':';
+            float: left;
+            line-height: 100px;
+            font-size: 48px;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+
+        .stage ul:last-child::after {
+            content: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="hours">
+            <li class="im"></li>
+            <li class="im"></li>
+        </ul>
+
+        <ul class="minute">
+            <li class="im"></li>
+            <li class="im"></li>
+        </ul>
+
+        <ul class="second">
+            <li class="im"></li>
+            <li class="im"></li>
+        </ul>
+    </div>
+    <script>
+        function xxx(num) {
+            return num < 10 ? '0' + num : String(num);
+        }
+        var doc = document.querySelector('.im');
+        var s = '0' + 1;
+        console.log('ss => ',typeof s);
+
+        // console.log('aaa ==> ',xxx(12));
+        function showCrad(dom, num) {
+            dom.style.transition = "all .8s";
+            dom.style.backgroundPositionY = Number(num) * -dom.offsetHeight + 'px';
+        }
+        var second = document.querySelector('.second');
+        var minute = document.querySelector('.minute');
+        var hours = document.querySelector('.hours');
+
+        setInterval(function () {
+            var now = new Date();
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+
+            second.querySelectorAll("li").forEach(function (li, index, lis) {
+                showCrad(li,xxx(s)[index]);
+            });
+            minute.querySelectorAll("li").forEach(function (li, index, lis) {
+                showCrad(li,xxx(m)[index]);
+            });
+            hours.querySelectorAll("li").forEach(function (li, index, lis) {
+                showCrad(li,xxx(h)[index]);
+            });
+        }, 1000)
+
+    </script>
+</body>
+
+</html>

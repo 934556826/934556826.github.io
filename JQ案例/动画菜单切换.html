@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font_b6jwacxzna7/iconfont.css">
+    <link rel="stylesheet" href="./font_9j7zcuppr0o/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background: rgba(128, 128, 128, 0.637);
+        }
+
+        ul {
+            position: relative;
+            background: #fff;
+        }
+
+        ul>li {
+            list-style: none;
+            height: 65px;
+            box-sizing: border-box;
+            border-bottom: 1px solid lightsteelblue;
+            text-align: center;
+            line-height: 65px;
+            cursor: pointer;
+            z-index: 3;
+            position: relative;
+
+        }
+
+        ul>li:last-child {
+            border-bottom: none;
+        }
+
+        .main {
+            width: 240px;
+            height: 260px;
+
+        }
+
+        .main ul li span {
+            margin-right: 10px;
+        }
+
+        /* .active {
+            background: gray;
+        } */
+
+        .mask {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 65px;
+            background: rgb(59, 127, 216);
+            display: none;
+            z-index: 2;
+        }
+
+        .moutu {
+            position: absolute;
+            background: lightsteelblue;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 65px;
+            opacity: .7;
+            z-index: 0;
+            /* display: none; */
+        }
+
+        .dick {
+            position: relative;
+        }
+
+        .dick span:nth-child(2) {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            right: 40px;
+            display: block;
+            text-align: center;
+            line-height: 20px;
+            width: 20px;
+            height: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <ul>
+            <li><span class="iconfont">&#xe601;</span>我的账户</li>
+            <li class="dick"><span class="iconfont">&#xe624;</span>一起来玩<span class="iconfont ice">&#xe633;</span></li>
+            <li><span class="iconfont">&#xe64f;</span>超级娱乐</li>
+            <li><span class="iconfont">&#xe51c;</span>位置定位</li>
+        </ul>
+
+        <div class="mask"></div>
+        <div class="moutu"></div>
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        var lis = $('.main>ul>li');
+        var ul = $('ul');
+        var mask = $('.mask');
+        var moutu = $('.moutu');
+
+        
+
+        var dick = $('.dick');
+        var $li = $('<li class="ii">我的订单</li><li class="ii">我的钱包</li>')
+        dick.on('click', function () {
+
+            if (lis.length == 6) {
+
+                $('.ice').css({
+                    transform: "rotate(0deg)"
+
+                });
+                $li.remove();
+                lis = $('.main>ul>li');
+
+
+            } else {
+
+                $('.ice').css({
+                    transform: "rotate(180deg)"
+                })
+
+                dick.after($li);
+                lis = $('.main>ul>li');
+                xxx();
+
+            }
+        })
+
+        function xxx() {
+            lis.each(function (index, li) {
+                $(li).on('click', function () {
+
+
+                    var hei = $(this).outerHeight();
+
+                    mask.animate({ top: hei * $(this).index() + 'px' });
+                    moutu.animate({ top: hei * $(this).index() + 'px' });
+
+                    mask.css('display', 'block');
+                    moutu.css('display', 'block');
+                })
+            })
+
+        };
+
+
+        xxx();
+
+        ul.on('mouseleave', function () {
+
+            mask.css('display', 'none');
+            moutu.css('display', 'none');
+        })
+
+
+    </script>
+</body>
+
+</html>

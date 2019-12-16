@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "287380",
+      "name": "女跳蛋2",
+      "font_class": "nvtiaodan2",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "1669255",
+      "name": "美女",
+      "font_class": "meinv",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "7041503",
+      "name": "网红帅哥",
+      "font_class": "wanghongshuaige",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "9336343",
+      "name": "定位",
+      "font_class": "location",
+      "unicode": "e51c",
+      "unicode_decimal": 58652
+    }
+  ]
+}

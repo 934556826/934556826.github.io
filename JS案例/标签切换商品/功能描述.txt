@@ -1,0 +1,25 @@
+1、根据标签数据动态创建商品类型标签
+2、点击商品类型标签动态显示不同数据，同时激活标签
+3、使用面向对象方式实现 或者 对象方式实现
+
+
+例如：
+===========================>
+面向对象方式
+function TagData() {
+	
+}
+
+TagData.prototype.init = function () {}
+
+//功能实例
+var tagData = new TagData();
+tagData.init();
+
+===========================>
+对象方式
+var tagData = {
+	init: function () {}
+};
+
+tagData.init();

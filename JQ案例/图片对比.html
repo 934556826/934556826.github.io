@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS滑动图片对比</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" />
+    <style>
+        body {
+            background: #eee;
+        }
+
+        .main {
+            width: 690px;
+            height: 600px;
+            background: #fff;
+            margin: 50px auto;
+            position: relative;
+            background-image: url('./images/c1.jpg');
+            overflow: hidden;
+        }
+
+        .auto-img {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+        }
+
+        .main .ceng {
+            background-image: url('./images/c2.jpg');
+            position: relative;
+            width: 0;
+            height: 100%;
+        }
+
+        .main .ceng2 {
+            background-image: url('./images/c3.jpg');
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .main .ceng2 .long2 {
+            height: 100%;
+            width: 7px;
+            background: rgb(233, 146, 17);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            cursor: move;
+
+        }
+
+        .main .ceng .long {
+            height: 100%;
+            width: 7px;
+            background: lightskyblue;
+            position: absolute;
+            top: -54%;
+            left: 0;
+            z-index: 2;
+            cursor: move;
+        }
+
+        .main .ceng .long2 {
+            height: 100%;
+            width: 7px;
+            background: lightcoral;
+            position: absolute;
+            top: 54%;
+            left: 0;
+            z-index: 2;
+            cursor: move;
+        }
+
+        .main .ceng .yuan {
+            height: 50px;
+            width: 50px;
+            background: rgb(46, 233, 9);
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            margin-top: -25px;
+            z-index: 2;
+            cursor: move;
+        }
+
+        .main .ceng .layer {
+            width: 690px;
+            height: 600px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="ceng">
+            <!-- 绑定事件层 -->
+            <div class="layer"></div>
+            <!-- 骨头 -->
+            <div class="long"></div>
+
+            <div class="long2"></div>
+
+            <div class="yuan"></div>
+        </div>
+
+        <!-- <div class="ceng2"> -->
+            <!-- 绑定事件层 -->
+            <!-- <div class="layer"></div> -->
+            <!-- 骨头 -->
+            <!-- <div class="long2"></div>
+        </div> -->
+
+
+        <!-- 
+        <div>
+           
+            <img class="auto-img" src="./images/2.jpg" alt="">
+        </div>
+        <div>
+           
+            <img class="auto-img" src="./images/3.jpg" alt="">
+        </div> -->
+
+
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        var long = $('.long');
+        var main = $('.main');
+        var layer = $('.layer');
+        var ceng = $('.ceng');
+        var yuan = $('.yuan');
+        var long2 = $('.long2');
+        var ceng2 = $('.ceng2');
+
+        long.css({
+            left: '425px',
+        })
+
+        ceng.css({
+            width: '425px',
+        })
+
+        long2.css({
+            left: '425px',
+        })
+
+        ceng2.css({
+            width: '225px',
+        })
+
+        yuan.css({
+            left: 404,
+        })
+
+        // $('.long').mousedown(function(){
+        //     $(document).mousemove(function(e){
+        //         $('.long').offset({
+        //             left:e.pageX
+        //         })
+
+        //         $('.ceng').css({
+        //             width:e.pageX + 'px'
+        //         })
+        //     })
+        //     $('.long').mouseup(function(){
+        //         $(document).off('mousemove');
+        //     })
+        // })
+
+        // $('.long2').mousedown(function(){
+        //     $(document).mousemove(function(e){
+        //         $('.long2').offset({
+        //             left:e.pageX
+        //         })
+        //         console.log(e.pageX);
+                
+
+        //         $('.ceng2').css({
+        //             width:e.pageX + 'px'
+        //         })
+        //     })
+        //     $('.long2').mouseup(function(){
+        //         $(document).off('mousemove');
+        //     })
+        // })
+
+        function move(e) {
+
+
+            var x = e.offsetX;
+            console.log(x);
+            
+            // var y = e.offsetX;
+
+            // var minleft = -parseInt(long.width()) / 2;
+            var minleft = 0;
+            var maxLeft = parseInt(main.width());
+
+            var left = x - parseInt(long.width()) / 2;
+
+            left = left >= maxLeft ? maxLeft : left <= minleft ? minleft : left;
+
+            long.css({
+                left: left + 'px',
+            })
+
+            long2.css({
+                left: left + 'px',
+            })
+
+            yuan.css({
+                left:left - yuan.width()/2 + 3.5,
+            })
+
+            ceng.css({
+                width: parseInt(long.css('left')) + 'px',
+            })
+        }
+
+        layer.on('mousedown', function (e) {
+            move(e);
+
+            $(this).on('mousemove', function (e) {
+                e.preventDefault();
+
+                move(e);
+            })
+        })
+
+        layer.on('mouseup', function () {
+            $(this).unbind("mousemove");
+            //unbind() 方法移除被选元素的事件处理程序。
+        })
+
+        layer.on('mouseleave', function () {
+            $(this).unbind("mousemove");
+            //unbind() 方法移除被选元素的事件处理程序。
+        })
+
+
+        // function move2(e) {
+
+
+        //     var x = e.offsetX;
+        //     // var y = e.offsetX;
+
+        //     // var minleft = -parseInt(long.width()) / 2;
+        //     var minleft = 0;
+        //     var maxLeft = parseInt(main.width());
+
+        //     var left = x - parseInt(long.width()) / 2;
+
+        //     left = left >= maxLeft ? maxLeft : left <= minleft ? minleft : left;
+
+        //     long2.css({
+        //         left: left + 'px',
+        //     })
+
+        //     ceng2.css({
+        //         width: parseInt(long.css('left')) + 'px',
+        //     })
+        // }
+
+        // long2.on('mousedown', function (e) {
+        //     move(e);
+
+        //     $(this).on('mousemove', function (e) {
+        //         e.preventDefault();
+
+        //         move(e);
+        //     })
+        // })
+
+        // long2.on('mouseup', function () {
+        //     $(this).unbind("mousemove");
+        //     //unbind() 方法移除被选元素的事件处理程序。
+        // })
+
+        // long2.on('mouseleave', function () {
+        //     $(this).unbind("mousemove");
+        //     //unbind() 方法移除被选元素的事件处理程序。
+        // })
+
+
+    </script>
+</body>
+
+</html>

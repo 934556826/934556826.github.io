@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iphone触点</title>
+  <style>
+    body{
+      margin: 0 auto;
+    }
+    
+    html,body,.box{
+      height: 100%;
+    }
+
+    .box{
+      background: url("./chelizi.jpg") no-repeat 0 0;
+      background-size: cover;
+    }
+
+    .circle{
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      right: 0;
+      top: 100px;
+      background-color: rgba(0, 0, 0, .65);
+      border-radius: 10px;
+      opacity: .5;
+      transition: opacity .25s linear;
+    }
+
+    .a1{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 28px;
+      height: 28px;
+      border: 2px solid rgba(221, 221, 221, .4);
+      border-radius: 50%;
+    }
+
+    .a2{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(221, 221, 221, .5);
+      border-radius: 50%;
+    }
+
+    .a3{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 16px;
+      height: 16px;
+      background-color: rgba(255, 255, 255, .65);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+
+    <div class="circle">
+      <i class="a1"></i>
+      <i class="a2"></i>
+      <i class="a3"></i>
+    </div>
+
+  </div>
+  
+  <script>
+  
+    window.onload = function () {
+      var circle = document.getElementsByClassName('circle')[0];
+
+      //手机触摸事件
+      //手指开始触碰事件 ontouchstart
+      //手指移动触点事件 ontouchmove
+      //手指离开屏幕事件 ontouchend
+      //手指触点被取消时事件 ontouchcancel, 比如来电显示
+
+      var startX = 0, startY = 0;
+      circle.ontouchstart = function (e) {
+
+        //设置透明度
+        this.style.opacity = 1;
+
+        //设置过渡效果
+        this.style.transition = 'none';
+
+        // console.log('e ==> ', e);
+        //获取页面坐标
+        startX = e.changedTouches[0].pageX;
+        startY = e.changedTouches[0].pageY;
+
+        console.log('startX ==> ', startX);
+        console.log('startY ==> ', startY);
+
+      }
+
+      
+      circle.ontouchmove = function (e) {
+        //获取页面坐标
+        var moveX = e.changedTouches[0].pageX;
+        var moveY = e.changedTouches[0].pageY;
+
+        console.log('moveX ==> ', moveX);
+        console.log('moveY ==> ', moveY);
+
+
+        //获取开始和移动之后的坐标差
+        var x = moveX - startX;
+        var y = moveY - startY;
+
+        //重置开始坐标为移动之后的坐标
+        startX = moveX;
+        startY = moveY;
+
+        // console.log('x ==> ', x);
+        // console.log('y ==> ', y);
+
+        //获取circle的top和left
+        var circleStyle = getComputedStyle(circle);
+        var left = parseFloat(circleStyle.left);
+        var top = parseFloat(circleStyle.top);
+
+        // console.log('left ==> ', left);
+        // console.log('top ==> ', top);
+
+        circle.style.left = left + x + 'px';
+        circle.style.top = top + y + 'px';
+      }
+
+      //获取circle的宽度
+      var w = parseFloat(getComputedStyle(circle).width);
+
+      //手指松开时
+      circle.ontouchend = function (e) {
+
+        this.style.transition = 'all .25s linear';
+
+        this.style.opacity = .5;
+
+        //获取以circle元素的中心为起点的四个方向的距离
+        var top = parseFloat(getComputedStyle(this).top) + w / 2;
+        var bottom = innerHeight - top;
+        var left = parseFloat(getComputedStyle(this).left) + w / 2;
+        var right = innerWidth - left;
+
+        //将四个方向的值存放在数组，以便查找最小值
+        var direction = [top, bottom, left, right];
+        console.log('direction ==> ', direction);
+
+        //获取最小值
+        var min = Math.min.apply(Math, direction);
+        console.log('min ==> ', min);
+
+        //获取小值的下标
+        var index = direction.indexOf(min);
+
+        function t1() {
+          if (direction[2] <= w / 2) {
+            this.style.left = '0px';
+          } else if (direction[3] <= w / 2) {
+            this.style.left = innerWidth - w + 'px';
+          }
+        }
+
+        function t2() {
+          if (direction[0] <= w / 2) {
+            this.style.top = '0px';
+          } else if (direction[1] <= w / 2) {
+            this.style.top = innerHeight - w + 'px';
+          }
+        }
+
+        if (index == 0) {
+          this.style.top = '0px';
+
+          //将t1函数的this指向于circle
+          t1.call(this);
+        } else if (index == 1) {
+          this.style.top = innerHeight - w + 'px';
+
+          //将t1函数的this指向于circle
+          t1.call(this);
+
+        } else if (index == 2) {
+          this.style.left = '0px';
+
+          //将t2函数的this指向于circle
+          t2.call(this);
+
+        } else if (index == 3) {
+          this.style.left = innerWidth - w + 'px';
+
+          //将t2函数的this指向于circle
+          t2.call(this);
+
+        }
+
+      }
+
+    }
+
+  </script>
+</body>
+</html>

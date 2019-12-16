@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>表单验证</title>
+  <style>
+    .msg{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    邮箱：<input class="control" name="isEmail" type="text" /><span class="msg">邮箱格式不正确</span>
+  </div>
+  <div>
+    手机号：<input class="control" name="isPhone" type="text" /><span class="msg">手机号格式不正确</span>
+  </div>
+  <div>
+    匿名：<input class="control" name="isNickname" type="text" /><span class="msg">匿名只支持汉字字母数字，并且含有大写字母, 4-8个字符</span>
+  </div>
+  <div>
+    密码：<input class="control" name="isPassword" type="password" /><span class="msg">匿名只支持字母数字, 6-16个字符</span>
+  </div>
+  <div>
+    确认密码：<input class="control" name="isEqual" type="password" /><span class="msg">两次密码不一致</span>
+  </div>
+
+  <button id="register" type="button">注册</button>
+
+  <script src="./validForm.js"></script>
+  <script>
+  
+    window.onload = function () {
+
+      var controls = document.querySelectorAll('.control');
+
+      for (var i = 0; i < controls.length; i++) {
+
+        //绑定输入事件
+        controls[i].oninput = function () {
+
+          //获取当前input的name属性值作为validForm对象的方法名称
+          var fnName = this.getAttribute('name');
+
+          //控制提示信息是否显示
+          var show;
+
+          //如果是判断两值相等，validForm[fnName]函数需要传递两个参数
+          if (fnName == 'isEqual') {
+            var pwd = document.querySelector('[name="isPassword"]').value;
+            show = validForm[fnName](this.value, pwd) ? 'none' : 'inline';
+          } else {
+            show = validForm[fnName](this.value) ? 'none' : 'inline';
+          }
+           
+          this.parentNode.querySelector('.msg').style.display = show;
+        }
+      } 
+
+    }
+  </script>
+</body>
+</html>

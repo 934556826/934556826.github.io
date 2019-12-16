@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			.stage {
+				background: lightgreen;
+				width: 500px;
+				position: relative;
+				overflow: hidden;
+			}
+			.stage img {
+				width: 350px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				vertical-align: middle;
+                transition:  all 0.3s;
+			}
+			.stage img:first-child {
+				position: static;
+			}
+			.stage img:nth-child(2) {
+				left: 25%;
+				/* left: 50px; */
+			}
+			.stage img:nth-child(3) {
+				left: 50%;
+				/* left: 100px; */
+			}
+			.stage img:nth-child(4) {
+				left: 75%;
+				/* left: 450px; */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stage">
+			<img src="./img/a1.png" alt="" />
+			<img src="./img/a2.png" alt="" />
+			<img src="./img/a3.png" alt="" />
+			<img src="./img/a4.png" alt="" />
+		</div>
+
+		<script>
+			// 默认 0 25% 50% 75%
+
+			// 1   0 350 400 450
+			// 2   0 50 400 450
+			// 3   0 50 100 450
+			// 4   0 50 100 150
+
+			// 点击元素前面的和自身 都是 index * 50
+			// 后面的元素index * 50 + 350 -50 => (index-1)*50
+
+			var imgs = document.querySelectorAll(".stage img");
+
+			// imgs.forEach(function (img, index) {
+			//     img.onclick = function () {
+			//         console.log(index);
+			// 0 1 2 3
+			//     }
+			// });
+
+			// for (var i = 0; i < imgs.length; i++) {
+			//     imgs[i].onclick = function () {
+			//         console.log(i); //4 4 4 4
+			//     }
+			// }
+
+			imgs.forEach(function(img, index) {
+				img.onclick = function() {
+					console.log(index);
+					imgs.forEach(function(ele, i) {
+						if (i <= index) {
+							ele.style.left = i * 50 + 'px';
+						} else {
+                            ele.style.left = (i-1) * 50 + 350 + 'px';
+                        }
+					});
+				};
+			});
+		</script>
+	</body>
+</html>
