@@ -1,0 +1,684 @@
+.main {
+    background: #fc427b;
+    padding: 100px 0;
+}
+
+.container>div {
+    /* width: 100px;
+            height: 100px; */
+    /* background: skyblue; */
+    text-align: center;
+    margin: 10px 0;
+}
+
+.container>div>h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 50px 0 20px 0;
+    font-family: none;
+}
+
+.container>div>p {
+    color: white;
+    font-weight: 100;
+    font-size: 16px;
+    font-family: none;
+}
+
+.glyphicon {
+    border: 2px solid white;
+    font-size: 32px;
+    color: white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 25px;
+}
+
+
+/* 超小屏幕（手机，小于 768px） */
+
+
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+
+
+/* 小屏幕（平板，大于等于 768px） */
+
+@media (min-width: 768px) {
+    .collapse .navbar-right .dropdown-menu {
+        right: auto;
+        border-radius: 10px;
+    }
+}
+
+.navbar-default .container .navbar-nav>li>a {
+    color: #333333;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #fc427b;
+}
+
+.dropdown-menu li {
+    margin: 0 10px;
+    margin: 0 5px;
+}
+
+.dropdown-menu {
+    background: #333;
+}
+
+.navbar-header .navbar-brand {
+    font-size: 36px;
+    font-family: "Srisakdi", cursive;
+    color: #fc427b;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    nav.navbar .navbar-collapse ul.navbar-nav li ul.dropdown-menu li a {
+        color: white;
+        transition: all 0.3s;
+        padding: 5px 10px;
+    }
+    nav.navbar .navbar-collapse ul.navbar-nav li ul.dropdown-menu li a:hover {
+        color: #333;
+    }
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+section.banner .carousel-inner .item {
+    background-size: cover;
+    background-position: center;
+}
+
+section.banner .carousel-inner .item:nth-child(1) {
+    background-image: url("./assets/images/2.jpg");
+}
+
+section.banner .carousel-inner .item:nth-child(2) {
+    background-image: url("./assets/images/1.jpg");
+}
+
+section.banner .carousel-inner .item:nth-child(3) {
+    background-image: url("./assets/images/4.jpg");
+}
+
+.item .caption .row {
+    text-align: center;
+    color: white;
+    height: 400px;
+    margin-top: 100px;
+}
+
+.carousel-inner .item .caption .row h5 {
+    font-size: 22px;
+    color: #333333;
+    font-weight: normal;
+    line-height: 2em;
+}
+
+.carousel-inner .item .caption .row h3 {
+    font-size: 24px;
+    font-weight: bolder;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+    line-height: 1.5em;
+}
+
+section.banner .carousel-inner .item .caption a.btn {
+    margin-top: 20px;
+    background: #fc427b;
+    border: 2px solid white;
+    color: white;
+    font-weight: normal;
+    transition: all 0.3s;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 15px 30px;
+}
+
+section.banner .carousel-inner .item .caption a.btn:hover {
+    background: white;
+    color: #333333;
+}
+
+.navbar-default .container .navbar-nav>li>a {
+    font-size: 15px;
+    font-weight: 500;
+    /* 字母间距 */
+    letter-spacing: 1px;
+    padding-left: 20px;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.navbar-default .container .navbar-nav>li:nth-child(5)>a {
+    padding-right: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.kidding .container .list-inline span {
+    font-size: 28px;
+    background: #FC427B;
+}
+
+.kidding .container .row div>h5 {
+    text-align: left;
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-family: initial;
+    color: #464646;
+    font-weight: 500;
+    margin-bottom: 6rem !important;
+    margin-top: 1rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.kidding .container {
+    padding-top: 48px;
+}
+
+.kidding {
+    padding-top: 30px;
+}
+
+.kidding .container .row div>h3 {
+    text-align: left;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+}
+
+.container>div {
+    margin: 0;
+}
+
+.kidding .list-inline h5 {
+    letter-spacing: 1px;
+    color: #343a40;
+    margin-top: 1.5rem !important;
+    font-size: 20px;
+}
+
+.kidding .list-inline p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.9;
+    color: #999;
+    font-family: 'Sintony', sans-serif;
+}
+
+.model .row div[class^=col] {
+    text-align: left;
+    margin-top: 40px;
+}
+
+.model .row div[class^=col] span {
+    color: #FC427B;
+    font-size: 20px;
+    padding: 0 5px 0 0;
+}
+
+.model .row div[class^=col] h3 {
+    padding-top: 24px;
+}
+
+.model .row div[class^=col] .ppp {
+    padding: 10px 0 16px 0;
+}
+
+.img-16 {
+    position: relative;
+}
+
+.img-16 h3 {
+    color: white;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 10px 25px;
+    background: #38d2fe;
+}
+
+.model .row .img-16 h3 span {
+    color: white;
+}
+
+.model .container {
+    padding: 48px 15px;
+}
+
+.model .row>h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.model .row>h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.9;
+    color: #999;
+    font-family: 'Sintony', sans-serif;
+}
+
+.model .row div[class^=col]>p>a {
+    color: #999;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+.model .row div[class^=col]>p>a:hover {
+    color: black;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.9;
+    color: #999;
+    font-family: 'Sintony', sans-serif;
+}
+
+.sheloves {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-image: url(./assets/images/bg2.jpg);
+    background-size: cover;
+}
+
+.posi-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.sheloves .container .row {
+    text-align: left;
+    padding: 100px 0;
+}
+
+.sheloves .container .row span {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.sheloves .container .row h3 {
+    font-weight: 800;
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    padding: 8px 0 16px 0;
+}
+
+.sheloves .container .row p {
+    color: #fff;
+}
+
+@media (min-width: 1200px) {
+    .col-xl-5 {
+        width: 38.33333333%;
+    }
+}
+
+.gallery .container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.gallery .row div[class^=col] {
+    padding: 5px;
+}
+
+.gallery .row div[class^=col] img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+#myModal .modal-body {
+    width: 350px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+#myModal .modal-body img {
+    width: 100%;
+}
+
+.gallery .container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.mb-2 {
+    padding: 8px 0 16px 0;
+}
+
+.gallery .container .row {
+    padding-top: 50px;
+}
+
+button[type='submit'] {
+    width: 100%;
+    background: #38d2fe;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 15px;
+    margin: 10px 0;
+    transition: all .3s;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 15px;
+    border: none;
+    letter-spacing: 1px;
+    font-size: 15px;
+    height: 50.8px;
+    line-height: 50.8px;
+    margin: 10px 0;
+}
+
+.bott {
+    background: url(./assets/images/bg3.jpg) no-repeat center;
+    padding: 100px 0;
+    background-attachment: fixed;
+}
+
+.bott .row .text>h3 {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 32px;
+}
+
+.bott .row .text {
+    margin-bottom: 48px;
+}
+
+.bott .row .text>p {
+    color: #e0e0e0;
+}
+
+.contact .container .row .col-li-6 {
+    max-width: 50%;
+}
+
+.contact .container .row {
+    padding-top: 16px 15px;
+}
+
+.contact {
+    padding: 48px 0;
+}
+
+.address {
+    padding: 40px;
+    box-shadow: 0px 2px 13px -1px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+.address:nth-child(2) {
+    margin: 30px 0;
+}
+
+.address h4 {
+    font-size: 23px;
+    color: #38d2fe;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.form-address {
+    padding: 40px;
+    box-shadow: 0px 2px 13px -1px rgba(0, 0, 0, 0.15);
+    margin: 32px 0;
+}
+
+.form-address input {
+    border: none;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #333;
+    border-radius: 0px;
+    outline: none;
+    box-shadow: none;
+}
+
+textarea {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #333;
+    resize: none;
+    background: none;
+}
+
+.form-address h4 {
+    font-size: 23px;
+    color: #38d2fe;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.contact .text>h3 {
+    padding-bottom: 8px
+}
+
+.contact .text {
+    padding-bottom: 48px
+}
+
+
+/* 超小屏幕（手机，小于 768px） */
+
+
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+
+
+/* 小屏幕（平板，大于等于 768px） */
+
+@media (min-width: 768px) {
+    nav.navbar {
+        padding: 0 50px;
+    }
+    nav.navbar .navbar-collapse ul.navbar-nav li a {
+        text-align: center;
+    }
+    nav.navbar .navbar-collapse ul.navbar-nav li:hover ul.dropdown-menu {
+        display: block;
+    }
+    nav.navbar .navbar-collapse ul.navbar-nav li ul.dropdown-menu {
+        background: #333333;
+    }
+    nav.navbar .navbar-collapse ul.navbar-nav li ul.dropdown-menu li a {
+        color: white;
+        transition: all 0.3s;
+        padding: 5px 10px;
+    }
+    nav.navbar .navbar-collapse ul.navbar-nav li ul.dropdown-menu li a:hover {
+        color: #333333;
+        background: white;
+    }
+    .carousel-inner .item {
+        height: 500px;
+    }
+    .carousel-inner .item .caption {
+        padding-top: 130px;
+    }
+    .carousel-inner .item .caption h5 {
+        font-size: 18px;
+    }
+    .carousel-inner .item .caption h3 {
+        font-size: 30px;
+    }
+    .carousel-inner .item .caption .row {
+        text-align: right;
+        margin-top: 0;
+    }
+}
+
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+
+@media (min-width: 992px) {
+    .carousel-inner .item {
+        height: 600px;
+    }
+    .carousel-inner .item .caption {
+        padding-top: 170px;
+    }
+    .carousel-inner .item .caption h5 {
+        font-size: 20px;
+    }
+    .carousel-inner .item .caption h3 {
+        font-size: 40px;
+    }
+    .carousel-inner .item .caption .row {
+        text-align: right;
+        margin-top: 0;
+    }
+    .form-address {
+        margin: 0;
+    }
+}
+
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+
+@media (min-width: 1200px) {
+    .carousel-inner .item {
+        height: 720px;
+    }
+    .carousel-inner .item .caption {
+        padding-top: 250px;
+    }
+    .carousel-inner .item .caption h5 {
+        font-size: 25px;
+    }
+    .carousel-inner .item .caption .row h3 {
+        font-size: 50px;
+    }
+    .carousel-inner .item .caption .row {
+        text-align: right;
+        margin-top: 0;
+    }
+    .form-address {
+        margin: 0;
+    }
+}
+
+.The-last {
+    background: #212020;
+    padding: 48px 0;
+}
+
+.The-last .row {
+    margin: 48px 15px;
+}
+
+.The-last .row>div[class^=col] {
+    text-align: left;
+}
+
+.The-last .row>div[class^=col] h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff !important;
+    margin-bottom: 48px;
+    margin-top: 20px;
+}
+
+.The-last .row>div[class^=col] h4 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.Modi {
+    margin: 24px 0;
+}
+
+.The-last .row>div[class^=col] ul li {
+    list-style: none;
+}
+
+.The-last .row>div[class^=col] ul {
+    margin: 0;
+    padding: 0;
+}
+
+.The-last .row>div[class^=col] ul li>a {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: #ababab;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.The-last .row>div[class^=col] ul li>a:hover {
+    color: #fff;
+}
+
+#myModal .modal-dialog .modal-footer {
+    position: relative;
+}
+
+#myModal .modal-dialog .modal-footer span {
+    color: black;
+    position: absolute;
+    border: none;
+    font-size: 18px;
+    padding: 0;
+    top: 5px;
+}
+
+#myModal .modal-dialog .modal-footer span:nth-child(1) {
+    left: 10px;
+}
+
+#myModal .modal-dialog .modal-footer span:nth-child(2) {
+    right: 10px;
+}
