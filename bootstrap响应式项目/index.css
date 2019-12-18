@@ -10,7 +10,11 @@
     text-align: center;
     margin: 10px 0;
 }
-
+.auto-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .container>div>h1 {
     color: white;
     font-weight: 600;
