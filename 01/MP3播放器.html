@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font_8octyradg4s/iconfont.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-weight: 300;
+            box-sizing: border-box;
+            font-family: open sans;
+            font-weight: 300;
+            color: #888;
+            outline: none;
+        }
+
+        ul>li {
+            list-style: none;
+        }
+
+        body {
+            background: #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .player {
+            width: 352px;
+
+            background: #fff;
+        }
+
+        .header {
+            background: url(./img/周候.jpg);
+            transition: all .3s;
+            padding: 35px;
+            padding-top: 125px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .author {
+            letter-spacing: 2px
+        }
+
+        .main {
+            width: 100%;
+        }
+
+        .thumb {
+            float: left;
+            margin-right: 25px;
+        }
+
+        .thumb>img {
+            width: 33.6px;
+            height: 33.6px;
+            border-radius: 50%;
+            margin-top: 2px;
+
+        }
+
+        .main>div {
+            padding: 20px 28px;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .main .active {
+            background: #EBEBEB;
+        }
+
+        h4 {
+            font-weight: 600;
+        }
+
+        .song-Name {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .author {
+            color: #fff;
+            font-size: 12px;
+            margin: 8px 0;
+        }
+        .audio-controls>ul{
+            display: flex;
+        }
+        .audio-controls>ul li {
+            float: left;
+            flex: 1;
+            text-align: center;
+            vertical-align: initial;
+            background: #0279DD;
+            padding: 20px;
+            border-top: 1px solid #888;
+           
+        }
+        /* .audio-controls>ul li:nth-child(1){
+            margin-left: 0.1px;
+        } */
+
+        .audio-controls>ul li>span {
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            opacity: .6;
+            transition: all .3s;
+        }
+        .audio-controls>ul li>span:hover{
+                opacity: 1;
+            }
+
+        .audio-controls>ul .play span {
+            font-size: 30px;
+
+        }
+
+        .progress {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.4);
+            position: relative;
+            border-radius: 5px
+        }
+
+        .progress-active {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0px;
+            height: 10px;
+            background: #6187C6;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .mask {
+            position: absolute;
+            left: -10px;
+            top: -5px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .layer {
+            position: absolute;
+            left: 0;
+            top: -5px;
+            height: 20px;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .play {
+            position: relative;
+            height: 71.4px;
+        }
+
+        .play span {
+            display: none;
+        }
+
+        .play span:nth-child(2) {
+            position: absolute;
+            top: 20px;
+            left: 44px;
+        }
+
+        .play .active {
+            display: block;
+        }
+
+        .left {
+            float: left;
+            padding-top: 5px;
+            display: block;
+        }
+
+        .right {
+            float: right;
+            padding-top: 5px;
+            display: block;
+        }
+
+        .ontime>span,
+        .alltime>span {
+            color: white;
+
+        }
+
+        @keyframes myrotates {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player">
+        <div class="header">
+            <p class="song-Name">我不配</p>
+            <p class="author">周杰伦 & 侯佩岑</p>
+            <audio class="dio" src="./我不配.mp3"></audio>
+            <div class="progress">
+                <!-- 激活进度层 -->
+                <div class="progress-active"></div>
+                <!-- 滑块层 -->
+                <div class="mask"><i></i></div>
+                <div class="layer"></div>
+            </div>
+            <div class="left ontime">
+                <span>00</span>
+                <span>:</span>
+                <span>00</span>
+            </div>
+            <div class="right alltime">
+                <span>00</span>
+                <span>:</span>
+                <span>00</span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="section1" data-src="./我不配.mp3">
+                <div class="thumb"><img src="./img/周候.jpg" alt=""></div>
+                <h4>我不配</h4>
+                <p>周杰伦 & 侯佩岑</p>
+            </div>
+            <div class="section1" data-src="./半岛铁盒.mp3">
+                <div class="thumb"><img src="./img/1.png" alt=""></div>
+                <h4>半岛铁盒</h4>
+                <p>周杰伦</p>
+            </div>
+            <div class="section1" data-src="./最长的电影.mp3">
+                <div class="thumb"><img class="s11" src="./img/2.png" alt=""></div>
+                <h4>最长的电影</h4>
+                <p>周杰伦</p>
+            </div>
+        </div>
+        <div class="audio-controls">
+            <ul>
+                <li class="pre"><span class="iconfont">&#xe61d;</span></li>
+                <li class="play"><span class="iconfont pof active">&#xe8a3;</span>
+                    <span class="iconfont stop">&#xf0019;</span>
+                </li>
+                <li class="next"><span class="iconfont">&#xe61e;</span></li>
+            </ul>
+        </div>
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+        $('.main>div').each(function (index, div) {
+
+            $(div).on('click', function () {
+                $(".actimg").removeClass('actimg');
+                $(this).siblings().children(0).children(0).css({
+                    animation: ''
+                })
+                // var cur = true;
+                // if ($('.ontime>span').eq(2).text() > 0 || $('.ontime>span').eq(0).text() > 0) {
+                //     $('.dio')[0].pause();
+                //     cur = flase;
+                // } else{
+                current = $(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                console.log($(this).children(0).children(0));
+
+                $(this).children(0).children(0).css({
+                    animation: 'myrotates 6s linear 0s infinite'
+                })
+
+                //添加一个激活类名
+                $(this).children(0).children(0).addClass('actimg');
+
+                $('.header').css({
+                    backgroundImage: 'url(' + $(this).children(0).children(0).attr('src') + ')',
+                })
+
+                $('.song-Name').text($(this).children('h4').text());
+                $('.author').text($(this).children('p').text());
+                // console.log($(this).attr('data-src'));
+
+                audi.attr('src', $(this).attr('data-src'));
+
+                $('.dio')[0].play();
+
+                $('.pof').removeClass('active').siblings().addClass('active');
+
+
+
+                // }
+
+                // $('.pof')[0].className = 'iconfont pof active';
+                // $('.stop')[0].className = 'iconfont stop';
+
+            })
+        })
+
+        // 点击播放按钮播放事件
+        $('.play>span').each(function (index, span) {
+            $(span).on('click', function () {
+                if ($(this).hasClass('pof')) {
+                    // 一开始是播放按钮被点击，开始播放 隐藏播放按钮 显示暂停按钮
+                    $(this).removeClass('active').next().addClass('active');
+                    document.querySelector('.dio').play();
+
+                    $(".actimg").css({
+                        animationPlayState: '',
+                    })
+
+                } else {
+                    $(this).removeClass('active').prev().addClass('active');
+
+                    document.querySelector('.dio').pause();
+
+                    $(".actimg").css({
+                        animationPlayState: 'paused',
+                    })
+                }
+            })
+
+        })
+
+        var current = 0;
+        var canClick = true;
+
+        function playSong() {
+            var now = $('.main>div').eq(current);
+
+            $(".actimg").removeClass('actimg');
+            now.children(0).children(0).css({
+                animation: 'myrotates 6s linear 0s infinite'
+            })
+
+            // $(".actimg").removeClass('actimg');
+            now.siblings().children(0).children(0).css({
+                animation: ''
+            })
+
+            now.addClass('active').siblings().removeClass('active');
+            now.children(0).children(0).addClass('actimg');
+
+
+            $('.header').css({
+                backgroundImage: 'url(' + now.children(0).children(0).attr('src') + ')',
+            })
+            $('.song-Name').text(now.children('h4').text());
+            $('.author').text(now.children('p').text());
+            audi.attr('src', now.attr('data-src'));
+
+            $('.dio')[0].play();
+            $('.pof').removeClass('active').siblings().addClass('active');
+            canClick = true;
+
+
+        }
+
+        function nextSong() {
+            if (canClick) {
+                canClick = false;
+                current = current >= 2 ? 0 : ++current;
+                playSong();
+            }
+        }
+
+        function prevSong() {
+            if (canClick) {
+                canClick = false;
+                current = current <= 0 ? 2 : --current;
+                playSong();
+            }
+        }
+        $(".next").click(nextSong);
+        $(".pre").click(prevSong);
+
+        // $('.next').on('click',function(){
+        //     $('.main>div').each(function(index,li){
+        //         if($(this).hasClass('active')){
+        //             console.log($(this));
+
+        //             $(this).removeClass('active').next().addClass('active');
+
+        //     }
+        //         // if($(li).hasClass('active')){
+        //         //     console.log($(this).next());
+
+        //         //     $(this).removeClass('active');
+        //         //     $(this).next().addClass('active');
+        //         // }
+        //     })
+        // })
+        // $('.pre').on('click',function(){
+        //     $('.main>div').each(function(index,li){
+        //         if($(this).hasClass('active') && index != 0){
+        //             // console.log($(this));
+
+        //             $(this).removeClass('active').prev().addClass('active');
+
+        //     }else if($(this).hasClass('active') && index == 0){
+        //         $(this).removeClass('active');
+        //         console.log($('.main>div').eq(2));
+
+        //         $('.main>div').eq(2).addClass('active');
+        //     }
+        //         // if($(li).hasClass('active')){
+        //         //     console.log($(this).next());
+
+        //         //     $(this).removeClass('active');
+        //         //     $(this).next().addClass('active');
+        //         // }
+        //     })
+        // })
+
+        var layer = $('.layer');
+        var mask = $('.mask');
+        var activeProgress = $('.progress-active');
+        var audi = $('.dio');
+
+        function move(e) {
+            var left = e.offsetX - mask.width() / 2;
+
+            var minLeft = -10;
+            var maxLeft = layer.width() - mask.width() / 2;
+
+            left = left >= maxLeft ? maxLeft : left <= minLeft ? minLeft : left;
+
+            mask.css({
+                left: left + 'px'
+            })
+
+            // 激活进度条
+            activeProgress.css({
+                width: e.offsetX + 'px'
+            })
+            //获取激活的进度和layer进度比
+            var percent = e.offsetX / layer.width();
+            //设置当前音频的播放时间
+            document.querySelector('.dio').currentTime = percent * duration;
+        }
+
+        layer.on('mousedown', function (e) {
+            move(e);
+
+            $(this).on('mousemove', function (e) {
+                //阻止浏览器默认行为
+                e.preventDefault();
+
+                move(e);
+            })
+        })
+
+        layer.on('mouseup', function () {
+            // console.log($(this)[0]);
+            $(this).unbind("mousemove");
+
+        })
+        layer.on('mouseleave', function () {
+            // console.log($(this)[0]);
+            $(this).unbind("mousemove");
+
+        })
+
+        // 保存音频总时间
+        var duration = 0;
+
+        //音频可播放时事件
+        document.querySelector('.dio').oncanplay = function () {
+            //获取音频总时长
+            duration = this.duration;
+            console.log('duration ==> ', duration);
+            var s1 = parseInt(duration / 60) < 10 ? '0' + parseInt(duration / 60) : parseInt(duration / 60);
+            var s2 = parseInt(duration % 60) < 10 ? '0' + parseInt(duration % 60) : parseInt(duration % 60);
+            $('.alltime>span').eq(0).text(s1);
+            $('.alltime>span').eq(2).text(s2);
+        }
+        //实时更新播放时间
+        function updateTime(time) {
+
+            var s3 = parseInt(time / 60) < 10 ? '0' + parseInt(time / 60) : parseInt(time / 60);
+            $('.ontime>span').eq(0).text(s3);
+
+            var s4 = parseInt(time % 60) < 10 ? '0' + parseInt(time % 60) : parseInt(time % 60);
+            $('.ontime>span').eq(2).text(s4);
+
+        }
+        //音频实时变化事件
+        document.querySelector('.dio').ontimeupdate = function () {
+            //获取音频当前播放时间
+            var currentTime = this.currentTime;
+            // console.log('currentTime ==> ', currentTime);
+            updateTime(currentTime);
+            //音频时间百分比
+            var percent = currentTime / duration;
+
+            // console.log(duration);
+
+            mask.css({
+                left: layer.width() * percent - 10 + 'px'
+            })
+
+            // mask.css('left') = layer.width() * percent - 10 + 'px';
+
+            var w = layer.width() * percent;
+
+            activeProgress.css({
+                width: w + 'px'
+            })
+
+            // activeProgress.width() = w + 'px';
+
+        }
+        // 播放完成后，自动播放下一首
+       $('.dio')[0].addEventListener('ended', function () {
+        nextSong();
+
+		})
+    </script>
+</body>
+
+</html>

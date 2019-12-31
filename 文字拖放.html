@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background: #F4E2C9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul>li {
+            list-style: none;
+            width: 200px;
+            height: 50px;
+            background: #fff;
+            text-align: center;
+            box-sizing: border-box;
+            line-height: 50px;
+        }
+
+        ul>li:not(:last-child) {
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li ondragstart="drag(event)" id="test1" draggable="true">A</li>
+        <li ondragstart="drag(event)" id="test2" draggable="true">B</li>
+        <li ondragstart="drag(event)" id="test3" draggable="true">C</li>
+        <li ondragstart="drag(event)" id="test4" draggable="true">D</li>
+        <li ondragstart="drag(event)" id="test5" draggable="true">E</li>
+        <li ondragstart="drag(event)" id="test6" draggable="true">F</li>
+        <li ondragstart="drag(event)" id="test7" draggable="true">G</li>
+        <li ondragstart="drag(event)" id="test8" draggable="true">H</li>
+    </ul>
+    <script>
+        function drag(event) {
+            event.dataTransfer.setData('Text', event.target.id);
+            console.log(document.getElementById(event.dataTransfer.getData('Text')));
+            var that = document.getElementById(event.dataTransfer.getData('Text'));
+            that.style.opacity = 0.5;
+            
+        }
+
+        //监听 拖到某个元素上
+        var lis = document.querySelectorAll('ul>li');
+        lis.forEach(function (li, index) {
+            li.ondragover = function (event) {
+                
+                event.preventDefault();
+                lis.forEach(function(li1){
+                    li1.style.opacity = 1;
+                })
+                this.style.opacity = 0.5;
+                
+            }
+
+            //监听 放事件
+            li.ondrop = function (event) {
+                var s1;
+                s1 = this.textContent;
+                this.textContent = document.getElementById(event.dataTransfer.getData('Text')).textContent;
+                document.getElementById(event.dataTransfer.getData('Text')).textContent = s1;
+                document.getElementById(event.dataTransfer.getData('Text')).style.opacity = 1;
+                this.style.opacity = 1;
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    width          : 100%;
+    height         : 100vh;
+    box-sizing     : border-box;
+    justify-content: center;
+    text-align     : center;
+    display        : flex;
+    align-items    : center;
+    background-image: linear-gradient(120deg, rgba(66, 173, 206, 0.795), rgba(0, 0, 0, 0)),
+        linear-gradient(240deg, rgba(150, 50, 50, 0.8), rgba(0, 0, 0, 0));
+}
+
+.stage {
+    position     : relative;
+    width        : 600px;
+    box-shadow   : 0 0 40px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
+    // display : flex;
+    .player-main {
+        position: relative;
+        height  : 200px;
+        padding : 30px;
+        overflow: hidden;
+
+        .bg-song {
+            width          : 100%;
+            height         : 100%;
+            position       : absolute;
+            top            : 0;
+            left           : 0;
+            z-index        : -1;
+            filter         : blur(10px);
+            border-radius  : 10px;
+            background     : url('../images/Frozen2-1.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        .cd-song {
+            float          : left;
+            width          : 150px;
+            height         : 150px;
+            background     : url('../images/cd.png') no-repeat;
+            background-size: cover;
+            position       : relative;
+
+            .cd {
+                width          : 100px;
+                height         : 100px;
+                overflow       : hidden;
+                position       : absolute;
+                top            : 0;
+                left           : 0;
+                right          : 0;
+                bottom         : 0;
+                border-radius  : 50%;
+                margin         : auto;
+                background     : url('../images/Frozen2-1.jpg') no-repeat;
+                background-size: cover;
+            }
+
+            .pointer {
+                position        : absolute;
+                right           : -10px;
+                width           : 30px;
+                height          : 90px;
+                background      : url('../images/cd_tou.png') no-repeat;
+                background-size : cover;
+                transform-origin: 70% 5%;
+                transform       : rotateZ(-20deg);
+                transition      : all 0.3s;
+            }
+
+            @keyframes cd {
+                0% {
+                    transform: rotateZ(0deg);
+                }
+
+                100% {
+                    transform: rotateZ(360deg);
+                }
+            }
+
+            @keyframes restart {
+                0% {
+                    transform: rotateZ(0deg);
+                }
+
+                100% {
+                    transform: rotateZ(360deg);
+                }
+            }
+        }
+
+        .controls {
+            width : 350px;
+            height: 150px;
+            float : right;
+
+            .song-msg {
+                width        : 100%;
+                height       : 60px;
+                margin-bottom: 20px;
+
+                h3 {
+                    font-size: 18px;
+                    color    : rgba(104, 95, 107, 0.712);
+                }
+
+                p {
+                    font-size : 14px;
+                    color     : rgba(104, 95, 107, 0.712);
+                    margin-top: 10px;
+                }
+            }
+
+            .song-control {
+                width: 100%;
+
+                .control-center {
+                    margin-bottom: 5px;
+                    overflow     : hidden;
+
+                    .btn {
+                        float   : left;
+                        overflow: hidden;
+
+                        .btn-style {
+                            float      : left;
+                            margin     : 0 10px;
+                            font-weight: bolder;
+                            cursor     : pointer;
+
+                            &:first-child {
+                                margin-left: 5px;
+                            }
+                        }
+
+                        span {
+                            width: 15px;
+                        }
+                    }
+
+                    .volume {
+                        float   : right;
+                        overflow: hidden;
+
+                        .icon {
+                            float      : left;
+                            margin     : 0 10px;
+                            font-weight: bolder;
+                            cursor     : pointer;
+                        }
+
+
+                        .volume-bar {
+                            float              : left;
+                            width              : 120px;
+                            position           : relative;
+                            top                : 7px;
+                            // cursor          : pointer;
+                            // border-radius   : 5px;
+                            // overflow        : hidden;
+                            // height          : 8px;
+                            // background-color: rgba(0, 0, 0, 0.3);
+                            // box-shadow      : 0 0 2px rgba(0, 0, 0, 0.5);
+                        }
+
+                        .progress {
+                            background   : rgba(0, 0, 0, 0.3);
+                            height       : 8px;
+                            box-shadow   : 0 0 2px rgba(0, 0, 0, 0.5);
+                            overflow     : hidden;
+                            border-radius: 5px;
+                            position     : relative;
+                            cursor       : pointer;
+
+                            .back {
+                                width           : 0;
+                                height          : 100%;
+                                border-radius   : 5px;
+                                background-color: rgb(12, 182, 212);
+                            }
+
+                            .pointer {
+                                position        : absolute;
+                                top             : -2px;
+                                width           : 12px;
+                                height          : 12px;
+                                background-color: #fff;
+                                border-radius   : 50%;
+                                opacity         : 1;
+                                transition      : all 0.3s;
+                            }
+                        }
+                    }
+                }
+
+                .control-time {
+                    margin-bottom: 5px;
+                    overflow     : hidden;
+
+                    .progress-bar {
+                        width     : 100%;
+                        margin-top: 8px;
+                    }
+
+                    .progress {
+                        background   : rgba(0, 0, 0, 0.3);
+                        height       : 8px;
+                        box-shadow   : 0 0 2px rgba(0, 0, 0, 0.5);
+                        overflow     : hidden;
+                        border-radius: 5px;
+                        position     : relative;
+                        cursor       : pointer;
+
+                        .back {
+                            width           : 0;
+                            height          : 100%;
+                            border-radius   : 5px;
+                            background-color: rgb(12, 182, 212);
+                        }
+
+                        .pointer {
+                            position        : absolute;
+                            top             : -2px;
+                            width           : 12px;
+                            height          : 12px;
+                            background-color: #fff;
+                            border-radius   : 50%;
+                            opacity         : 1;
+                            transition      : all 0.3s;
+                        }
+                    }
+
+                    .progress-time {
+                        font-size          : 14px;
+                        margin-top         : 10px;
+                        // padding         : 0 3px;
+                        // border-radius   : 3px;
+                        // background-color: rgba(0, 0, 0, 0.2);
+                    }
+
+                    .nowTime {
+                        float: left;
+                    }
+
+                    .totalTime {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
