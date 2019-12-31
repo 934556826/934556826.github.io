@@ -5,7 +5,23 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
 }
-
+// .small{
+//     .swiper-wrapper{
+//         .swiper-slide{
+//             width: 270px !important;
+//             height: 360px !important;
+//         }
+//     }
+// }
+.dropdown-menu>li{
+    text-align: center;
+}
+.navbar-nav>li{
+    transition:  all .5s;
+}
+.head-nav{
+    width: 86%;
+}
 p {
     display: block;
     margin-block-start: 1em;
@@ -567,6 +583,7 @@ header {
         padding: 0;
         justify-content: center;
         margin: 50px 0;
+        flex-wrap: wrap;
 
         // max-width: 480px;
         .active {
@@ -581,6 +598,7 @@ header {
             padding: 10px 15px;
             cursor: pointer;
             transition: all .3s;
+            // flex: 1;
 
             &:hover {
                 background: #EC9123;
@@ -591,9 +609,9 @@ header {
             // }
         }
 
-        &>li:not(:last-child) {
-            margin-right: 20px;
-        }
+        // &>li:not(:last-child) {
+        //     margin-right: 20px;
+        // }
     }
 }
 
@@ -610,13 +628,16 @@ p {
 
 .navbar-header>a {
     width: 130px;
-    margin-top: 6px;
+    
 }
-
+.navbar-brand {
+    padding: 10px 15px;
+}
 .head-nav {
     z-index: 50;
-    position: fixed;
+    position: static;
     width: 100%;
+    
     background: rgba(16, 30, 44, 0.80);
 
     // .navbar-toggle {
@@ -692,8 +713,8 @@ p {
 
     p {
         color: #fff;
-        font-size: 14px;
-        line-height: 26px;
+        font-size: 12px;
+        line-height: 16px;
         font-weight: 500;
         max-width: 750px;
         margin: 10px auto 25px;
@@ -719,13 +740,13 @@ p {
 
     h1 {
         color: #fff;
-        font-size: 20px;
-        line-height: 40px;
+        font-size: 16px;
+        line-height: 30px;
         text-transform: uppercase;
         letter-spacing: 1px;
         margin: 0px auto;
         max-width: 925px;
-        font-weight: 800;
+        font-weight: 600;
     }
 }
 
@@ -850,8 +871,8 @@ p {
 
     .small {
         display: block;
-        width: 420px;
-        height: 560px;
+        // width: 420px;
+        // height: 560px;
 
         .swiper-slide {
             width: 100%;
@@ -1029,6 +1050,18 @@ header {
 
 /* 小屏幕（平板，大于等于 768px）                                          */
 @media (min-width: 768px) {
+    .shows02 .oderto > li:not(:last-child){
+        margin-right: 20px;
+    }
+    #carousel-example-generic .carousel-inner .item .carousel-caption p{
+        line-height: 26px;
+    }
+    .head-nav{
+        position: fixed;
+    }
+    .dropdown-menu>li{
+        text-align: left;
+    }
     .show-eight{
         text-align: left;
     }
@@ -1251,6 +1284,18 @@ header {
 
 /* 中等屏幕（桌面显示器，大于等于 992px） */
 @media (min-width: 992px) {
+    .shows02 .oderto > li:not(:last-child){
+        margin-right: 20px;
+    }
+    #carousel-example-generic .carousel-inner .item .carousel-caption p{
+        line-height: 26px;
+    }
+    .head-nav{
+        position: fixed;
+    }
+    .dropdown-menu>li{
+        text-align: left;
+    }
     .show-eight{
         text-align: left;
     }
@@ -1463,6 +1508,18 @@ header {
 
 /* 大屏幕（大桌面显示器，大于等于 1200px） */
 @media (min-width: 1200px) {
+    .shows02 .oderto > li:not(:last-child){
+        margin-right: 20px;
+    }
+    #carousel-example-generic .carousel-inner .item .carousel-caption p{
+        line-height: 26px;
+    }
+    .head-nav{
+        position: fixed;
+    }
+    .dropdown-menu>li{
+        text-align: left;
+    }
     .show-seven .show-7 .media .media-body{
         padding-top: 20px;
     }
