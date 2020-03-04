@@ -1,3 +1,8 @@
+# Vue小说项目
++ [登录页面](https://934556826.github.io/追书神器/dist/index.html)
+
+# Vue云音乐项目
++ [登录页面](https://934556826.github.io/网易云音乐/dist/index.html)
 
 # HTML+CSS+JS
 + [种地项目](https://934556826.github.io/cultivation/index.html)
